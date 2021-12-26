@@ -117,7 +117,7 @@ $weekendEnd    = $settings->getWeekendClose($activeSettings);
         <nav class="navigation d-flex align-items-center">
             <div class="container">
                 <div class="row">
-                    <div class="col-2"><a class="logo" href="/"><img src="{{asset('frontend/images/JBS_Logo.png')}}"
+                    <div class="col-2"><a class="logo" href="/"><img src="{{asset('frontend/images/logo3.png')}}"
                                                                      alt=""
                                                                      style="width: 75%; margin-left: 40%"></a></div>
                     <div class="col-8">
