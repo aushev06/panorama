@@ -11,7 +11,7 @@ $weekendEnd    = $settings->getWeekendClose($activeSettings);
 <html>
 
 <head>
-    <title>@yield('title', "Jroo - Доставка еды")</title>
+    <title>@yield('title', "Jroo - Доставка еды")wefwefwef</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
     <link rel="stylesheet" href="{{mix('frontend/css/all.css')}}">
