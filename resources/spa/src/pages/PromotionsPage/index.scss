@@ -1,0 +1,247 @@
+.promotions-page {
+    margin-bottom: 1em;
+
+    &>h2 {
+        font-size: 1.5em;
+        margin: 2.5em 0 2em 0;
+    }
+
+    .promotions__wrapper {
+        //display: flex;
+        //flex-direction: row;
+
+        display: grid;
+        grid-template-columns: repeat(2, 49%);
+        gap: 2%;
+
+        .block-cards {
+            width: 100%;
+            justify-content: space-between;
+            display: flex;
+            flex-direction: column;
+
+            .block-cards__background {
+                background: linear-gradient(86.73deg, #294053 -5.24%, #836765 186.96%);
+                box-shadow: 0px 22px 33px rgba(0, 0, 0, 0.11);
+                border: 0.3px solid #7A8D9F;
+                border-radius: 10px;
+
+                color: #fff;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+
+                max-width: 40em;
+                max-height: 12em;
+                height: 12em;
+
+                margin-bottom: 1em;
+                transition: 0.2s all;
+
+                cursor: pointer;
+
+
+                .block-cards__wrapper {
+                    display: grid;
+                    grid-template-columns: 75% 25%;
+                    align-items: center;
+                    justify-items: center;
+
+                    .wrapper__text {
+                        font-size: 1.25em;
+                    }
+
+                    .wrapper__discount {
+                       span {
+                           font-size: 50px;
+                           background: linear-gradient(274.46deg, #DBB196 0.72%, #B2805E 97.45%);
+                           -webkit-background-clip: text;
+                           -webkit-text-fill-color: transparent;
+                       }
+                    }
+                }
+
+            }
+
+        }
+
+        .block-info {
+            .block-info__text {
+
+                div {
+                    h2 {
+                        font-size: 2em;
+                        margin-top: 0;
+                        position: relative;
+                        padding-left: 1.5em;
+
+                        &:before {
+                            content: '';
+                            background-image: url("data:image/svg+xml,%3Csvg width='27' height='2' viewBox='0 0 27 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M25.7802 1H1.21875' stroke='%23D89F78' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+                            position: absolute;
+                            height: 2px;
+                            width: 1em;
+                            top: 50%;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                        }
+                    }
+
+                    p {
+                        font-size: 1.5em;
+                    }
+
+                }
+
+            }
+
+            .block-info__cards {
+                margin-top: 4em;
+                margin-bottom: 1em;
+
+                div {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 1em;
+                    justify-items: center;
+
+                    .plastic-card {
+                        background: #FFFFFF;
+                        box-shadow: 0px 2.6524px 20.3351px rgba(61, 72, 87, 0.15);
+                        border-radius: 15px;
+
+                        max-width: 14em;
+                        max-height: 7em;
+                        width: 12vw;
+                        height: 6vw;
+
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+
+                        img {
+                            width: 8em;
+                            object-fit: contain;
+                        }
+
+                    }
+                }
+            }
+        }
+
+    }
+
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+@media (min-width: 320px) and (max-width: 480px) {
+
+    .promotions-page .promotions__wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .promotions-page .promotions__wrapper .block-cards .block-cards__background {
+        height: 10em;
+        margin-bottom: 1em;
+    }
+
+    .promotions-page .promotions__wrapper .block-info .block-info__cards div {
+        grid-template-columns: repeat(2, 1fr);
+
+        .plastic-card {
+            width: 40vw;
+            height: 20vw;
+        }
+    }
+
+    .promotions-page .promotions__wrapper .block-info .block-info__cards {
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+
+    .promotions-page .promotions__wrapper .block-cards .block-cards__background .block-cards__wrapper {
+        grid-template-columns: 70% 30%;
+
+        .wrapper__discount span {
+            font-size: 45px;
+        }
+    }
+
+}
+
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .promotions-page .promotions__wrapper .block-info .block-info__cards div .plastic-card {
+        width: 13vw;
+        height: 7vw;
+
+        img {
+            width: 5em;
+        }
+    }
+
+    .promotions-page .promotions__wrapper .block-cards .block-cards__background .block-cards__wrapper {
+        grid-template-columns: 70% 30%;
+
+        .wrapper__discount span {
+            font-size: 40px;
+        }
+    }
+
+}
+
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .promotions-page .promotions__wrapper .block-info .block-info__cards div .plastic-card img {
+        width: 6em;
+    }
+
+}
+
+/*
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+@media (min-width: 1281px) {
+
+     .block-cards__wrapper .wrapper__text {
+         font-size: 1.5em;
+     }
+
+    .promotions-page h2 {
+        font-size: 2em;
+    }
+
+    .block-info__cards > div {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2em;
+
+        .plastic-card {
+            width: 14em;
+            height: 7em;
+
+            img {
+                width: 10em;
+            }
+        }
+    }
+}
+
+
+

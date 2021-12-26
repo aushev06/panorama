@@ -1,0 +1,48 @@
+div.magia-linear-textarea__wrapper {
+    position: relative;
+    margin-bottom: 1em;
+}
+
+div.magia-linear-textarea__wrapper textarea.magia-linear-textarea {
+    outline: none;
+    height: 10em;
+    width: 100%;
+    font-size: 16px;
+    margin: 0;
+    padding: 5px 0 0 0;
+    transition: box-shadow .3s, border .3s;
+    background: #FFFFFF;
+    color: #979797;
+    border: 0.1px solid #aa967d7a;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+div.magia-linear-textarea__wrapper textarea.magia-linear-textarea:focus,
+div.magia-linear-textarea__wrapper textarea.magia-linear-textarea:hover{
+    border-color: inherit !important;
+    box-shadow: 0 0 black !important;
+}
+
+/*input {*/
+/*    height: 20px;*/
+/*}*/
+
+div.magia-linear-textarea__wrapper i.icon {
+    width: 2em;
+    height: 100%;
+    line-height: 3em;
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+    float: left;
+}
+
+div.magia-linear-textarea__wrapper i.icon > * {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+div.magia-linear-textarea__wrapper i.icon + textarea.magia-linear-textarea {
+    padding-left: 2em;
+}

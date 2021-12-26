@@ -1,0 +1,159 @@
+.page-wrapper > h2 {
+    text-align: center;
+    font-size: 1.8em;
+}
+
+.page-menu-categories {
+    display: grid;
+    /*grid-template-columns: repeat(6, 1fr);*/
+    grid-template-columns: repeat(6, minmax(6em, 200px));
+    gap: 1rem;
+}
+
+.MobileCatalogPageFilters_filter {
+    margin: 0;
+}
+
+.page-menu-categories > li {
+    width: 100% !important;
+    /*width: 14em !important;*/
+    max-width: 204px;
+    /*height: 8em;*/
+    height: 9em;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.page-menu-categories > li > a {
+    height: 100%;
+    width: 100%;
+    color: #000;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3em;
+    align-items: inherit;
+    justify-content: center;
+    justify-items: center;
+
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    /*height: 100%;*/
+    /*width: 100%;*/
+    /*color: #000;*/
+}
+
+.page-menu-categories > li > a > span.category-text {
+    width: 100%;
+    padding: 0 10px;
+    text-align: center;
+    white-space: pre-wrap;
+}
+
+.page-menu-categories > li > .category-text {
+    text-align: center;
+    font-size: 0.9em;
+    white-space: pre-wrap;
+}
+
+.CatalogImg {
+    width: inherit;
+    height: inherit;
+}
+
+.page-menu-categories > li > a > img {
+    max-width: 3.8em;
+    height: auto;
+    width: auto;
+    max-height: 3.8em;
+}
+
+.page-menu-category-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 1.5em;
+}
+
+.page-menu-category {
+    max-height: 30em;
+    width: 100%;
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+@media screen and (max-width: 480px) {
+    .page-menu-categories {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .page-menu-categories > li {
+        margin: 0;
+        width: 100% !important;
+        /*height: 8em;*/
+        height: 9em;
+    }
+
+    .page-menu-categories > li > a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .page-menu-categories > li > a > img {
+        width: 4em !important;
+        height: 4em !important;
+    }
+}
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+@media (min-width: 481px) and (max-width: 767px) {
+    .page-menu-categories {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .page-menu-categories > li {
+        height: 9em;
+    }
+}
+
+
+/*
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+@media (min-width: 1281px) {
+    .page-menu-category-wrapper {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1em;
+    }
+
+    .page-menu-categories {
+        grid-template-columns: repeat(6, minmax(10em, 500px));
+    }
+}
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) {
+    .page-menu-category-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2em;
+    }
+    .page-menu-categories {
+        grid-template-columns: repeat(4, minmax(7em, 200px));
+    }
+    .page-menu-categories > li {
+        height: 9em;
+    }
+}

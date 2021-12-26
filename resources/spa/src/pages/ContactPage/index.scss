@@ -1,0 +1,262 @@
+.contact-page {
+    margin-bottom: 1em;
+
+    & h2 {
+        font-size: 1.5em;
+        margin: 2.5em 0 2em 0;
+    }
+
+    .contact__wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 49%);
+        gap: 2%;
+
+        .feedback-block {
+            form {
+                label {
+                    font-size: inherit;
+                    color: inherit;
+                }
+
+                .magia-send-button {
+                    background: #EFAF84;
+                    border: 0;
+                    border-radius: 23px;
+                    font-size: 16px;
+                    line-height: 18px;
+                    color: #FFFFFF;
+                    height: 3em;
+                    width: 15em;
+                    cursor: pointer;
+
+                    &:hover, &:focus {
+                        outline: 0;
+                    }
+                }
+            }
+        }
+
+        .information-block {
+            display: flex;
+            flex-direction: column;
+
+            & > div:first-child {
+                display: flex;
+                justify-content: space-between;
+
+                & div {
+                    display: flex;
+                    flex-direction: column;
+
+                    p {
+                        display: flex;
+                        //font-size: 0.85em;
+                        //font-size: 1.1em;
+                        font-size: 1em;
+
+                        a {
+                            color: #000;
+                        }
+
+                        img {
+                            margin-right: 5px;
+                        }
+                    }
+                }
+            }
+
+            .location-and-social {
+                .location-map {
+                    width: 100%;
+                    min-height: 15em;
+                    height: 100%;
+                    max-width: 700px;
+                    max-height: 500px;
+
+                    img {
+                        width: 100%;
+                    }
+                    iframe {
+                        width: inherit;
+                        height: inherit;
+                        min-height: inherit;
+                    }
+                }
+                .social-block {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    width: 100%;
+                    align-items: center;
+                    margin-top: 3em;
+
+                    .dividing-line {
+                        font-size: 0;
+                    }
+
+                    .social-list {
+                        display: flex;
+                        flex-direction: row;
+                        margin: 0;
+
+                        .social-item {
+                            margin-right: 1em;
+                            padding: 1em;
+                            background: #fff;
+                            width: 3rem;
+                            height: 3rem;
+                            position: relative;
+
+                            a {
+                                width: 100%;
+                                height: 100%;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+
+
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+@media (min-width: 320px) and (max-width: 480px) {
+    .contact-page h2 {
+        margin: 1em 0;
+    }
+    .contact-page .contact__wrapper {
+        grid-template-columns: 100%;
+    }
+    .contact-page .contact__wrapper .information-block {
+        grid-row-start: 1;
+    }
+
+    .contact-page .contact__wrapper .information-block > div:first-child {
+        flex-direction: column;
+    }
+
+    .contact-page .contact__wrapper .information-block .location-and-social .social-block .dividing-line svg {
+        width: 0;
+    }
+
+    .contact-page .contact__wrapper .information-block .location-and-social {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .contact-page .contact__wrapper .information-block .location-and-social .social-block > span {
+        display: none;
+    }
+
+    .contact-page .contact__wrapper .information-block .location-and-social .social-block .social-list {
+        margin-bottom: 2em;
+    }
+
+    .contact-page .contact__wrapper .feedback-block {
+        margin-bottom: 2em;
+
+        .magia-send-button {
+            width: 100% !important;
+            max-width: 100vw;
+        }
+    }
+
+}
+
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .contact-page h2 {
+        margin: 1em 0;
+    }
+    .contact-page .contact__wrapper {
+        grid-template-columns: 100%;
+    }
+    .contact-page .contact__wrapper .information-block {
+        grid-row-start: 1;
+    }
+
+    .contact-page .contact__wrapper .information-block > div:first-child {
+        flex-direction: column;
+    }
+
+    .contact-page .contact__wrapper .information-block .location-and-social .social-block .dividing-line svg {
+        width: 0;
+    }
+
+    .contact-page .contact__wrapper .information-block .location-and-social {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .contact-page .contact__wrapper .information-block .location-and-social .social-block > span {
+        display: none;
+    }
+
+    .contact-page .contact__wrapper .information-block .location-and-social .social-block .social-list {
+        margin-bottom: 2em;
+    }
+
+    .contact-page .contact__wrapper .feedback-block {
+        margin-bottom: 2em;
+
+        .magia-send-button {
+            width: 100% !important;
+        }
+    }
+
+}
+
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .contact-page .contact__wrapper .information-block .location-and-social .social-block .dividing-line svg {
+        width: 0;
+    }
+
+}
+
+/*
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+@media (min-width: 1281px) {
+
+    //.block-cards__wrapper .wrapper__text {
+    //    font-size: 1.5em;
+    //}
+
+    .contact-page {
+        margin-bottom: 1em;
+
+        & h2 {
+            font-size: 2em;
+            margin: 2.5em 0 2em 0;
+        }
+    }
+
+}
+
+
+

@@ -1,0 +1,33 @@
+.switch__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+
+    svg {
+        margin: 0 5px;
+    }
+
+    .switch-btn {
+        background: #fff;
+        color: #000;
+        font-size: 16px;
+        border: 0.3px solid #CACACA;
+        border-radius: 25px;
+        //width: 150px;
+        width: 100%;
+        max-height: 49px;
+        cursor: pointer;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &.checked {
+            background: #294053;
+            color: #fff;
+        }
+
+    }
+
+}

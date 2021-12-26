@@ -1,0 +1,887 @@
+.container {
+    margin: 0 auto;
+    max-width: 1678px;
+    width: 75%;
+}
+
+.header-container {
+    margin: 0 auto;
+    max-width: 1678px;
+    width: 90%;
+}
+
+.sidenav-overlay {
+    height: 0;
+    width: 0;
+}
+
+.header {
+    position: fixed !important;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(180deg, #1E2C39 0%, rgba(41, 64, 83, 0) 100%);
+    z-index: 1002;
+}
+
+.header > nav {
+    background: #fff0;
+    box-shadow: 0 0 black;
+    top: 0;
+    transition: padding 0.5s;
+    z-index: 1;
+    padding: 42px 0;
+    height: 100%;
+}
+.navbar-fixed {
+    background: linear-gradient(90.56deg, #294053 -3.55%, #836765 132.63%);
+    padding: 42px 0;
+    height: 0;
+    transition: all 0.6s;
+}
+.navbar-fixed > nav {
+    transition: padding 0.7s;
+    height: 84px;
+    position: relative;
+    padding: 0;
+}
+.sidenav-overlay {
+    opacity: 0 !important;
+}
+.nav-wrapper {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    grid-template-rows: 84px;
+}
+.nav-wrapper > .magia-logo {
+    padding: 0;
+    margin: 0;
+    height: inherit;
+    text-align: center;
+}
+.nav-wrapper > .magia-logo > img {
+    vertical-align: middle;
+}
+
+
+nav ul a {
+    margin: 0 1.5em;
+    padding: 0;
+    position: relative;
+    display: flex;
+}
+nav ul a:hover,
+nav ul a.active {
+    background: rgba(0,0,0,0);
+}
+
+nav ul a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    background: #fff;
+    transition: width .3s;
+    position: absolute;
+    top: 75%;
+}
+
+nav ul a:hover::after {
+    width: 100%;
+    transition: width .3s;
+}
+
+ul#mobile-menu > * {
+    /*border-bottom: 0.2px solid #ccc;*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*position: relative;*/
+}
+
+.mobil-menu-list {
+    display: flex;
+    flex-direction: column;
+}
+
+li.mobil-menu-link {
+    /*line-height: 0 !important;*/
+    /*width: 100%;*/
+    /*display: flex !important;*/
+    /*justify-content: center;*/
+    /*height: 100%;*/
+}
+
+li.mobil-menu-link::before {
+    content: '';
+    transition: width .3s;
+    position: absolute;
+    width: 0;
+    height: 100%;
+}
+li.mobil-menu-link:hover:before {
+    content: '';
+    width: 15px;
+    background: #EFAF84;
+    transition: width .3s;
+    position: absolute;
+    left: 0;
+    padding: 0;
+    height: 100%;
+}
+
+li.mobil-menu-link a {
+    /*width: 100%;*/
+    /*!*height: 100%;*!*/
+    /*position: relative;*/
+    /*padding: 1em;*/
+    /*!*height: auto;*!*/
+    /*height: 4em;*/
+    /*line-height: initial;*/
+    /*font-size: 0.7em;*/
+}
+li.mobil-menu-link a:hover {
+    margin-left: 1em;
+}
+
+a.callback-phone-button {
+    width: 6em;
+    height: 6em;
+    max-width: 45px;
+    max-height: 45px;
+    background: linear-gradient(274.46deg, #DBB196 0.72%, #B2805E 97.45%);;
+    border-radius: 50%;
+}
+
+#mobile-menu {
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*align-items: center;*/
+    /*width: 100%;*/
+    /*justify-content: flex-start;*/
+    /*justify-content: center;*/
+}
+
+.mobile-nav__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*padding: 10px 20px 70px 20px;*/
+    padding: 10px 20px 0 20px;
+
+    border: 0;
+}
+.header__info {
+    font-size: 20px;
+}
+.header__close-icon {
+    width: 15px;
+    height: 15px;
+}
+.mobile-nav__footer {
+    /*padding-bottom: 20px;*/
+    /*height: 100%;*/
+    /*display: flex;*/
+    /*align-items: flex-end;*/
+}
+.mobile-nav__footer > li {
+    margin: 0 2rem 0 1rem;
+}
+#mobile-menu .mobile-nav__header {
+    border: 0;
+}
+#mobile-menu .magia-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1em 0 6em 0;
+    /*padding: 1em 0 6em 0;*/
+
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    /*height: 100%;*/
+    /*padding-bottom: 3rem;*/
+}
+.mobile-nav__footer .social-icons a {
+    padding: 0 10px;
+}
+.mobile-nav__footer .social-icons a:hover {
+    background: rgba(0,0,0,0);
+}
+
+
+/*.brand-logo img {*/
+/*    height: 55px;*/
+/*}*/
+
+.d-flex {
+    display: flex;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.justify-content-around {
+    justify-content: space-around;
+}
+
+.justify-content-end {
+    justify-content: flex-end;
+}
+
+.justify-content-start {
+    justify-content: flex-start;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.notification-badge {
+    position: relative;
+    padding: 5px 9px;
+    background-color: #fff;
+    color: #941e1e;
+    bottom: 15px;
+    left: 15px;
+    border-radius: 50%;
+}
+
+.header__cart {
+    display: flex;
+    align-items: center;
+}
+
+.header__cart-txt {
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.header__cart-counter {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    font-size: 11px;
+    transition: all .25s ease;
+}
+.login-button{
+    border: 1px solid;
+    margin: 20px;
+    font-size: 1.5em !important;
+    text-align: center;
+    background: black;
+    color: #ffff !important;
+}
+.mobil-menu-icon{
+    width: 20%;
+    margin-right: 10px;
+}
+.mobil-menu-icon-city{
+    width: 1em;
+    margin-right: 5px;
+}
+.city-font{
+    font-size: 1em;
+}
+.login-icon{
+    width: 10%;
+    margin-right: 10px;
+}
+.mobil-menu-link{
+    /*display: flex !important;*/
+    font-size: 1.5em !important;
+    font-weight: bold !important;
+}
+.mobil-menu-link2{
+    display: flex !important;
+    font-size: 1em !important;
+    font-weight: bold !important;
+}
+.center-footer{
+    text-align: center !important;
+}
+.modal-icon{
+    width: 1.5em;
+    margin-right: 5px;
+}
+
+.about > div {
+    margin: 2em;
+}
+
+.delivery__info {
+    line-height: 1.2em;
+}
+
+@media screen and (max-width: 480px) {
+    div.about__cards {
+        flex-direction: row;
+        align-items: center;
+        margin: 0;
+    }
+
+    .about__cards .cards__layout {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 1em;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .header,
+    .navbar-fixed {
+        background: linear-gradient(90.56deg, #294053 -3.55%, #836765 132.63%);
+    }
+    .navbar-fixed {
+        padding: 0;
+        height: 54px;
+    }
+    .header > nav {
+        padding: 0;
+    }
+    .navbar-fixed > nav {
+        height: 54px;
+    }
+    nav .nav-wrapper {
+        grid-template-rows: 54px;
+        align-items: center;
+    }
+    nav .sidenav-trigger {
+        height: inherit;
+        vertical-align: middle;
+    }
+    nav .sidenav-trigger i {
+        height: inherit;
+    }
+    .nav-wrapper > .magia-logo > img {
+        height: 44px;
+        vertical-align: top;
+    }
+}
+@media (max-width: 767.98px) {}
+@media (max-width: 991.98px) {}
+@media (max-width: 1199.98px) {
+    /*.nav-wrapper {*/
+    /*    position: relative;*/
+    /*    height: 100%;*/
+    /*}*/
+    /*.nav-wrapper > .magia-logo > img {*/
+    /*    width: 80%;*/
+    /*}*/
+    /*nav ul a {*/
+    /*    margin: 0 10px;*/
+    /*    font-size: 0.9em;*/
+    /*}*/
+    /*.header a.location-btn {*/
+    /*    width: 100%;*/
+    /*    font-size: 0.9em;*/
+    /*}*/
+    /*.LandingCategories .MobileCatalogPageFilters_filter {*/
+    /*    font-size: 0.8em;*/
+    /*    justify-content: space-evenly;*/
+    /*    align-items: center;*/
+    /*}*/
+    /*!*.landing__main-content {*!*/
+    /*!*    width: 50vw !important;*!*/
+    /*!*}*!*/
+    /*.about {*/
+    /*    width: 87.5% !important;*/
+    /*    display: flex;*/
+    /*    flex-direction: row;*/
+    /*    !*gap: 4rem;*!*/
+    /*}*/
+    /*.about__cards {*/
+    /*    justify-content: space-between;*/
+    /*    max-width: 500px;*/
+    /*    !*gap: 2em;*!*/
+    /*    font-size: 0.9em;*/
+    /*    margin: 4rem 0;*/
+    /*}*/
+    /*.about__cards > .cards__layout {*/
+    /*    max-height: 450px;*/
+    /*}*/
+    /*.about__info h2 {*/
+    /*    font-size: 2em;*/
+    /*}*/
+    /*.magia-btn {*/
+    /*    font-size: 0.8em;*/
+    /*    padding: 5px 10px;*/
+    /*}*/
+    /*.cards__layout > .layout__card {*/
+    /*    margin: 1em 0;*/
+    /*}*/
+    /*.cards__layout > .layout__card > svg {*/
+    /*    max-width: 10em;*/
+    /*    max-height: 10em;*/
+    /*}*/
+    /*.delivery__info {*/
+    /*    font-size: 0.7em;*/
+    /*    line-height: 1.2em;*/
+    /*}*/
+
+}
+
+@media (min-width: 1024px) and (max-width: 1512px) {
+    .nav-wrapper {
+        width: 98% !important;
+    }
+}
+
+/*
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+@media (max-width: 1280px) {
+    .nav-wrapper {
+        position: relative;
+        height: 100%;
+    }
+    .nav-wrapper > .magia-logo > img {
+        /*width: 80%;*/
+    }
+    nav ul a {
+        margin: 0 10px;
+        font-size: 0.9em;
+    }
+    .header a.location-btn {
+        width: 100%;
+        font-size: 0.9em;
+    }
+    .LandingCategories .MobileCatalogPageFilters_filter {
+        font-size: 0.8em;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    /*.landing__main-content {*/
+    /*    width: 50vw !important;*/
+    /*}*/
+    .about {
+        width: 87.5% !important;
+        display: flex;
+        flex-direction: row;
+        /*gap: 4rem;*/
+    }
+    .about__cards {
+        justify-content: space-between;
+        max-width: 500px;
+        /*gap: 2em;*/
+        font-size: 0.9em;
+        margin: 4rem 0;
+    }
+    .about__cards > .cards__layout {
+        max-height: 450px;
+    }
+    .about__info h2 {
+        font-size: 2em;
+    }
+    .magia-btn {
+        font-size: 0.8em;
+        padding: 5px 10px;
+    }
+    .cards__layout > .layout__card {
+        margin: 1em 0;
+    }
+    .cards__layout > .layout__card > svg {
+        max-width: 10em;
+        max-height: 10em;
+    }
+    .delivery__info {
+        font-size: 0.7em;
+        line-height: 1.2em;
+    }
+
+    .btn-cart > img {
+        max-width: 15px;
+        max-height: 15px;
+        width: 2em;
+        height: 2em;
+    }
+
+    .btn-cart,
+    a.callback-phone-button {
+        max-width: 35px;
+        max-height: 35px;
+    }
+
+    .header a.location-btn {
+        max-height: 35px;
+    }
+}
+@media (max-width: 1399.98px) {
+    .magia-btn {
+        padding: 5px 10px;
+        font-size: inherit;
+    }
+    footer {
+        font-size: 0.8em;
+    }
+}
+@media (min-width: 1400px) {
+    nav ul a {
+        margin: 0 30px;
+    }
+    .delivery__info {
+        font-size: 0.85em;
+    }
+    .magia-btn {
+        font-size: 0.9em;
+    }
+}
+
+@media (min-width: 1600px) {
+    .nav-wrapper {
+        justify-content: initial;
+    }
+    .delivery__info {
+        font-size: 0.9em;
+    }
+
+}
+
+@media (min-width: 1800px) {
+    .delivery__info {
+        font-size: 1em;
+    }
+    .magia-btn {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+}
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+@media (min-width: 320px) and (max-width: 480px) {
+    #mobile-menu {
+        width: 100%;
+        height: 100% !important;
+    }
+    #mobile-menu .magia-logo {
+        /*padding: 3rem 0 6rem 0;*/
+        margin: 3rem 0 6rem 0;
+    }
+    #mobile-menu > .mobil-menu-list {
+        margin-bottom: 2em;
+    }
+    #mobile-menu > .mobil-menu-list > .mobil-menu-link:first-child {
+        border-top: 0.2px solid #ccc;
+    }
+    #mobile-menu > .mobil-menu-list > .mobil-menu-link {
+        position: relative;
+        border-bottom: 0.2px solid #ccc;
+        /*height: 40px;*/
+        /*line-height: 10px;*/
+    }
+    #mobile-menu > .mobil-menu-list > .mobil-menu-link > a {
+        height: 100%;
+        width: 100%;
+        /*font-size: 14px;*/
+        /*font-weight: 500;*/
+        /*line-height: 10px;*/
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .mobile-nav__footer {
+        /*display: unset;*/
+        padding: 0;
+        display: block;
+    }
+
+    .landing__main-content {
+        max-height: 80vh;
+    }
+
+    .carousel.carousel-slider .carousel-item {
+        justify-content: space-evenly;
+    }
+
+    div.landing__main-content .magia-order-btn {
+        margin: auto;
+    }
+
+    a.callback-phone-button {
+        width: 2em;
+        height: 2em;
+        max-width: 45px;
+        max-height: 45px;
+    }
+}
+
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+@media (min-width: 481px) and (max-width: 767px) {
+    .header,
+    .navbar-fixed {
+        background: linear-gradient(90.56deg, #294053 -3.55%, #836765 132.63%);
+    }
+    .navbar-fixed {
+        padding: 0;
+        height: 54px;
+    }
+    .header > nav {
+        padding: 0;
+    }
+    .navbar-fixed > nav {
+        height: 54px;
+    }
+    nav .nav-wrapper {
+        grid-template-rows: 54px;
+        align-items: center;
+    }
+    nav .sidenav-trigger {
+        height: inherit;
+        vertical-align: middle;
+    }
+    nav .sidenav-trigger i {
+        height: inherit;
+    }
+    .nav-wrapper > .magia-logo > img {
+        height: 44px;
+        vertical-align: top;
+    }
+
+    #mobile-menu {
+        width: 100%;
+        height: 100% !important;
+    }
+    #mobile-menu .magia-logo {
+        margin: 3rem 0 6rem 0;
+        /*padding: 3rem 0 6rem 0;*/
+    }
+    #mobile-menu > .mobil-menu-list {
+        margin-bottom: 2em;
+    }
+    #mobile-menu > .mobil-menu-list > .mobil-menu-link:first-child {
+        border-top: 0.2px solid #ccc;
+    }
+    #mobile-menu > .mobil-menu-list > .mobil-menu-link {
+        position: relative;
+        border-bottom: 0.2px solid #ccc;
+        /*height: 40px;*/
+        /*line-height: 10px;*/
+    }
+    #mobile-menu > .mobil-menu-list > .mobil-menu-link > a {
+        height: 100%;
+        width: 100%;
+        /*font-size: 14px;*/
+        /*font-weight: 500;*/
+        /*line-height: 10px;*/
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    a.callback-phone-button {
+        width: 2em;
+        height: 2em;
+        max-width: 45px;
+        max-height: 45px;
+    }
+
+    .mobile-nav__footer {
+        display: block;
+        padding: 0;
+    }
+
+    .carousel.carousel-slider .carousel-item {
+        justify-content: space-evenly;
+    }
+}
+
+@media screen and (orientation:portrait) {
+    .LandingCategories .MobileCatalogPageFilters_filter {
+        font-size: 0.6em;
+    }
+    .landing__main-content {
+        /*width: 70% !important;*/
+        /*max-height: 80vh;*/
+        height: 100%;
+        justify-content: start;
+    }
+    .landing__main-content h2,
+    .landing__main-content p {
+        width: 70vw;
+    }
+    .landing__main-content h2 {
+        margin-top: 5vh;
+    }
+    .landing__main-content .magia-order-btn {
+        margin: 0;
+    }
+    .about__cards > div {
+        max-height: 450px;
+    }
+    .delivery__info {
+        font-size: 0.83em;
+        line-height: 1em;
+    }
+    .delivery__info > h2 {
+        font-size: 1.8em;
+        margin: 0;
+    }
+    div.about__cards {
+        flex-direction: row;
+    }
+    div.about__cards > div {
+        flex-direction: column;
+    }
+    footer {
+        font-size: 0.7em
+    }
+
+}
+
+@media (max-height: 700px) and (orientation: landscape) {
+    .landing__wrapper {
+        height: 100vw;
+    }
+    .landing__wrapper > div {
+        flex-direction: column;
+    }
+    .landing__main-content {
+        margin: 140px auto 0;
+        width: 90vw !important;
+    }
+    .LandingCategories {
+        max-width: 100%;
+        max-height: 12em !important;
+    }
+    .MobileCatalogPageFilters_filter {
+        top: -1em !important;
+        /*min-height: 1px !important;*/
+        /*max-height: 10em !important;*/
+        /*height: 8em !important;*/
+        /*width: 8em !important;*/
+    }
+    .MobileCatalogPageFilters_filter > a {
+        width: 12vw;
+        height: 12vw;
+    }
+    .carousel .indicators {
+        bottom: -1.7em;
+    }
+    .about {
+        flex-direction: column-reverse;
+    }
+    .delivery-map__wrapper {
+        flex-direction: column;
+    }
+
+    .delivery-map__wrapper > div {
+        width: inherit !important;
+    }
+    div.about__cards {
+        justify-content: center;
+        margin: auto;
+    }
+    .cards__layout > .layout__card {
+        height: 13em;
+        width: 13em;
+    }
+    .cards__layout > .layout__card > svg {
+        max-width: 8em;
+        max-height: 8em;
+    }
+    .map {
+        border-radius: 14px 14px 0 0;
+    }
+    .call-wrapper {
+        margin-bottom: 1em;
+    }
+    .delivery__info {
+        font-size: 0.80em;
+        line-height: 1.5em;
+    }
+}
+@media (max-width: 1000px) and (orientation:portrait) {
+    .about {
+        height: auto;
+        max-height: 1000px;
+        flex-direction: column-reverse;
+    }
+    .about__cards {
+        justify-content: flex-start;
+        /*gap: 2em;*/
+        flex-direction: row;
+        max-width: inherit;
+        margin: 2em 0;
+    }
+    .about__cards > .cards__layout {
+        flex-direction: row;
+        width: 50vw;
+    }
+    .delivery-map__wrapper {
+        flex-direction: column;
+    }
+    .delivery__info {
+        font-size: 0.85em;
+        line-height: 1.5em;
+        width: inherit !important;
+    }
+    .call-wrapper {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .map {
+        border-radius: 14px 14px 0px 0px;
+    }
+    .cards__layout > .layout__card {
+        width: 12em;
+        height: 12em;
+        font-size: 0.8em;
+    }
+    .about__cards > div {
+        flex-direction: column !important;
+    }
+    .cards__layout > .layout__card > svg {
+        max-width: 6em;
+        max-height: 6em;
+        /*max-width: 8em;*/
+        /*max-height: 8em;*/
+    }
+    .slider {
+        height: 50vw;
+        margin-top: 0;
+    }
+    .about__cards > div:first-child {
+        /*align-items: center;*/
+        align-items: flex-end;
+    }
+}
+
+@media screen and (orientation: landscape) {
+    /*.landing__wrapper {*/
+    /*    height: 100vh;*/
+    /*}*/
+    .LandingCategories li.carousel-item {
+        width: 10em;
+        height: 10em;
+    }
+    div.about__cards {
+        flex-direction: row !important;
+    }
+    div.about__cards > div {
+        flex-direction: column !important;
+    }
+}
+

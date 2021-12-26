@@ -1,0 +1,691 @@
+.main-page {
+    width: 100%;
+    min-height: 100vh;
+    color: #000;
+
+    //position: sticky;
+    //top: 0;
+
+    .main-page__wrapper {
+        & h2 {
+            //font-size: 1.5em;
+            //margin: 2.5em 0 2em 0;
+        }
+
+        .main-page__landing {
+            min-height: 80vh;
+            background-image: url('/images/background-main.png'), linear-gradient(90.35deg, #294053 -1.36%, #836765 123.66%);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: right;
+            position: relative;
+            //width: 100%;
+            width: 100%;
+            padding-top: 168px;
+            margin-bottom: 1em;
+            max-height: 930px;
+            height: 50em;
+
+            div.info-block {
+                //width: 50%;
+                width: fit-content !important;
+                max-height: 60vh;
+                //height: 60vh;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                //justify-content: flex-end;
+                justify-content: flex-start;
+                //background: linear-gradient(90.35deg, #2940537a -1.36%, #83676585 123.66%);
+                background: linear-gradient(90.35deg, #294053c9 -1.36%, #836765db 123.66%);
+                padding: 1em;
+                margin-top: 1em;
+
+                h2 {
+                    font-size: 2.7em;
+                    margin-top: 0.3em;
+                }
+
+                h2, p {
+                    color: #fff;
+                }
+
+                a.magia-order-btn {
+                    transition: 0.3s all;
+                }
+            }
+
+
+            .landing-categories {
+                width: 100%;
+                position: absolute;
+                bottom: -78px;
+                z-index: 1000;
+
+                ul.DesktopCategories__wrapper {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    li.categoryItem {
+                        width: 115px;
+                        height: 130px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: space-evenly;
+
+                        background: #F7F7F9;
+                        border: 0.5px solid #C5C5C5;
+                        box-shadow: 0 6px 46px rgba(61, 72, 87, 0.26);
+                        border-radius: 10%;
+
+                        a {
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-evenly;
+                            align-items: center;
+                            color: #000;
+
+                            img {
+                                width: 50px;
+                                height: 50px;
+                                object-fit: cover;
+                                //border-radius: 50%;
+                            }
+
+                            svg {
+                                width: 50px;
+                                height: 50px;
+                            }
+                        }
+
+                        span {
+                            font-size: 0.85em;
+                            text-align: center;
+                        }
+                    }
+
+                }
+            }
+        }
+
+        .main-page__content {
+            height: 100%;
+            min-height: 100vh;
+            margin-bottom: 40px;
+
+            .coupon-slider {
+                overflow: hidden;
+
+                .coupon-slider__items {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+
+                    &.animate-carousel {
+                        -webkit-animation: marquee 30s linear infinite;
+                        animation: marquee 30s linear infinite;
+                        animation-delay: 1s;
+
+                        @keyframes marquee {
+                            0% {-webkit-transform: translateX(0);-ms-transform: translateX(0);transform: translateX(0)}
+                            100% {-webkit-transform: translate(-100%);-ms-transform: translate(-100%);transform: translate(-100%)}
+                        }
+
+                        @-webkit-keyframes marquee {
+                            0% {-webkit-transform: translateX(0);-ms-transform: translateX(0);transform: translateX(0)}
+                            100% {-webkit-transform: translate(-100%);-ms-transform: translate(-100%);transform: translate(-100%)}
+                        }
+                    }
+
+                    width: 100%;
+                    overflow: visible;
+
+                    .coupon-item {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        //justify-content: flex-end;
+                        align-items: center;
+
+                        opacity: 1;
+                        visibility: visible;
+                        position: initial;
+                        //width: 50vw;
+                        width: 100%;
+
+                        a {
+                            display: flex;
+                            justify-content: center;
+
+                            .ItemPicture {
+                                width: auto;
+                                height: 300px;
+                                object-fit: cover;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .we-are-best {
+                margin-bottom: 3em;
+
+                .we-are-best__wrapper {
+                    display: flex;
+                    flex-direction: column-reverse;
+                    justify-content: space-evenly;
+
+                    > div {
+                        max-width: 100%;
+                    }
+
+                    .we-are-best__cards {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        max-height: 800px;
+                        height: 800px;
+
+                        .we-are-best__first {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: flex-end;
+                        }
+
+                        .we-are-best__second {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: flex-start;
+                        }
+
+                        > div {
+
+                            .we-are-best__card {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-evenly;
+                                align-items: center;
+                                max-width: 300px;
+                                max-height: 300px;
+                                height: 100%;
+                                width: 100%;
+                                background: #FFFFFF;
+                                box-shadow: 0 3px 41px rgba(225, 225, 235, 0.41);
+                                border-radius: 20px;
+                                margin: 15px;
+
+                                &:hover {
+                                    box-shadow: 0 7px 43px #B1B1BD;
+                                }
+
+                                svg {
+                                    width: 130px;
+                                    height: 130px;
+                                    max-width: 150px;
+                                    max-height: 150px;
+                                }
+
+                                span {
+                                    padding: 0 50px;
+                                    text-align: center;
+                                }
+                            }
+                        }
+                    }
+
+                    .info {
+
+                        .get-order {
+                            margin-top: 40px;
+
+                            > a {
+                                padding: 0;
+                                width: 180px;
+                                height: 41px;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+                            }
+                        }
+
+                    }
+                }
+            }
+
+
+            .delivery-block {
+
+                .delivery-block__wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    background: #FFFFFF;
+                    box-shadow: 0 3px 41px rgba(225, 225, 235, 0.41);
+                    border-radius: 31px;
+
+                    .map {
+                        background-image: url('/images/map.jpg');
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        height: 400px;
+                        border-radius: 31px 31px 0 0;
+                    }
+
+                    .delivery-block__info {
+                        padding-left: 40px;
+
+                        h2 {
+                            font-size: 3em;
+                        }
+
+                        .info__order {
+
+                            .order-by-phone {
+                                display: flex;
+                                align-items: center;
+
+                                > p {
+                                    margin-right: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+
+        }
+
+    }
+
+    .order-btn {
+        padding: 0;
+        height: 35px;
+        width: 145px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9em;
+    }
+
+    .magia-order-btn {
+        margin-top: 1em;
+    }
+
+}
+
+.show-desktop {
+    display: inherit;
+}
+
+.show-mobile {
+    display: none;
+}
+
+
+.landing-categories-mobile ul {
+    max-height: calc(300px - 4em);
+
+    .carousel-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 8em !important;
+        height: 8em !important;
+        background: #fff;
+        opacity: 1 !important;
+
+        > a {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            color: #000;
+
+            img {
+                object-fit: cover;
+                //border-radius: 50%;
+                width: 3em;
+                height: 3em;
+            }
+
+            > span {
+                text-align: center;
+                font-size: 0.8em;
+            }
+
+
+        }
+
+    }
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+@media (min-width: 320px) and (max-width: 480px) {
+    .show-desktop {
+        display: none;
+    }
+
+    .main-page .main-page__wrapper .main-page__landing div.info-block {
+        max-height: 100vh;
+        height: auto;
+        margin: 1em auto;
+    }
+
+    .show-mobile {
+        display: inherit;
+    }
+
+    .main-page .main-page__wrapper .main-page__content .we-are-best .we-are-best__wrapper > div.info {
+        background: #FFFFFF;
+        box-shadow: 0 4.98851px 18.5287px rgba(225, 225, 235, 0.5);
+        border-radius: 14px;
+        padding: 1em;
+    }
+
+    .main-page .main-page__wrapper .main-page__landing {
+        padding-top: 54px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .landing-categories-mobile ul {
+            //max-height: 300px;
+            max-height: calc(300px - 4em);
+
+            .carousel-item {
+                width: 15em !important;
+                height: 15em !important;
+                max-width: 92px;
+                max-height: 92px;
+
+                box-shadow: 0px 2.60086px 19.9399px rgba(61, 72, 87, 0.26);
+                border-radius: 14px;
+            }
+        }
+
+    }
+
+    .main-page .main-page__wrapper .main-page__landing div.info-block {
+        width: 100%;
+        font-size: 0.9em;
+    }
+
+    .main-page .main-page__wrapper .main-page__content .coupon-slider .coupon-slider__items {
+        max-height: 120px;
+
+        .coupon-item {
+            justify-content: center;
+
+            a .ItemPicture {
+                width: auto;
+                height: 100px;
+                object-fit: contain;
+            }
+        }
+    }
+
+    .main-page .main-page__wrapper .main-page__content .we-are-best .we-are-best__wrapper .we-are-best__cards {
+        height: auto;
+
+        > div .we-are-best__card {
+            height: 10em;
+            width: 10em;
+            margin: 10px;
+
+            > svg {
+                width: 4em;
+                height: 4em;
+            }
+
+            > span {
+                padding: 0 10px;
+                font-size: 0.8em;
+            }
+        }
+    }
+
+
+    .main-page .main-page__wrapper .main-page__content .delivery-block .delivery-block__wrapper .map {
+        height: 15em;
+        border-radius: 10px;
+        background-size: cover;
+    }
+
+    .main-page .main-page__wrapper .main-page__content .delivery-block .delivery-block__wrapper .delivery-block__info {
+        padding: 1em;
+    }
+
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .main-page .main-page__wrapper .main-page__content .delivery-block .delivery-block__wrapper .delivery-block__info .info__order .order-by-phone {
+        align-items: unset;
+        flex-direction: column;
+
+        > a {
+            width: 100%;
+        }
+    }
+}
+
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+@media (min-width: 481px) and (max-width: 767px) {
+    .main-page .main-page__wrapper .main-page__landing {
+        padding-top: 58px;
+    }
+
+    .main-page .main-page__wrapper .main-page__landing div.info-block {
+        width: 70%;
+        max-height: 100%;
+        height: 100%;
+    }
+    .main-page .main-page__wrapper .main-page__content .coupon-slider .coupon-slider__items {
+        max-height: 200px;
+
+        .coupon-item {
+            justify-content: flex-start;
+
+            a .ItemPicture {
+                height: 160px;
+            }
+        }
+    }
+
+    .main-page .main-page__wrapper .main-page__content .we-are-best .we-are-best__wrapper .we-are-best__cards {
+        height: 47em;
+
+        > div > .we-are-best__card {
+            height: 17em;
+            width: 17em;
+        }
+    }
+
+    .main-page .main-page__wrapper .main-page__landing {
+        padding-top: 54px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .landing-categories-mobile ul {
+            //max-height: 300px;
+            max-height: calc(300px - 4em);;
+
+            .carousel-item {
+                width: 15em !important;
+                height: 15em !important;
+                max-width: 92px;
+                max-height: 92px;
+
+                box-shadow: 0px 2.60086px 19.9399px rgba(61, 72, 87, 0.26);
+                border-radius: 14px;
+            }
+        }
+
+    }
+}
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) {
+    .show-desktop {
+        display: inherit;
+    }
+    .show-mobile {
+        display: none;
+    }
+    .main-page .main-page__wrapper .main-page__landing div.info-block {
+        width: 70%;
+        justify-content: flex-start;
+        height: auto;
+    }
+
+    .main-page .main-page__wrapper .main-page__content .we-are-best .we-are-best__wrapper > div.info {
+        background: transparent;
+        box-shadow: none;
+        border-radius: 14px;
+        padding: 1em;
+    }
+}
+
+
+@media (max-width: 1280px) {
+    //.info {
+    //    background: #FFFFFF;
+    //    box-shadow: 0px 4.98851px 18.5287px rgba(225, 225, 235, 0.5);
+    //    border-radius: 14px;
+    //    padding: 1em;
+    //}
+}
+/*
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+@media (min-width: 1281px) {
+
+    .main-page .main-page__wrapper .main-page__landing {
+        padding-top: calc(168px + 1em);
+    }
+
+    .main-page .main-page__wrapper .main-page__landing div.info-block {
+        justify-content: flex-start;
+        max-height: 60vh;
+        height: auto;
+    }
+
+    .main-page .main-page__wrapper .main-page__landing div.info-block h2 {
+        //font-size: 3.56rem;
+        font-size: 2.56rem;
+    }
+
+    .main-page .main-page__wrapper .main-page__landing div.info-block p {
+        font-size: 1.25em;
+        margin: 0.5em;
+    }
+
+    .magia-order-btn {
+        margin-top: 0;
+    }
+
+    .main-page .main-page__wrapper .main-page__landing .landing-categories {
+        bottom: -6.5em;
+    }
+
+    .main-page .main-page__wrapper .main-page__landing .landing-categories ul.DesktopCategories__wrapper li.categoryItem {
+        width: 10em;
+        height: 11em;
+
+        a img {
+            width: 4em;
+            height: 4em;
+        }
+
+        span {
+            font-size: 1em;
+        }
+    }
+
+    .main-page .main-page__wrapper .main-page__content .we-are-best .we-are-best__wrapper {
+        flex-direction: row;
+
+        > div {
+            max-width: 50%;
+            margin: 1em;
+        }
+
+        .we-are-best__cards {
+
+        }
+    }
+
+    .main-page .main-page__wrapper .main-page__content .we-are-best .we-are-best__wrapper .we-are-best__cards {
+        height: 46em;
+
+        > div .we-are-best__card {
+            height: 16em;
+            width: 16em;
+
+            svg {
+                width: 8em;
+                height: 8em;
+            }
+        }
+    }
+
+    .main-page .we-are-best .we-are-best__wrapper .we-are-best__cards > div .we-are-best__card svg {
+        width: 140px;
+        height: 140px;
+    }
+
+    .main-page .main-page__wrapper .main-page__content .delivery-block .delivery-block__wrapper {
+        flex-direction: row;
+
+        .map {
+            background-size: contain;
+            height: auto;
+            border-radius: 31px 0 0 31px;
+            background-position-y: center;
+            width: 120%;
+        }
+
+        .delivery-block__info {
+            width: 100%;
+        }
+    }
+
+    h2 {
+        font-size: 2.56rem;
+    }
+
+    //.show-desktop {
+    //    display: inherit;
+    //}
+    //
+    //.show-mobile {
+    //    display: none;
+    //}
+
+}

@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'Fira Sans Light';
+    src: url('../fonts/FiraSansLight.eot');
+    src: url('../fonts/FiraSansLight.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/FiraSansLight.woff') format('woff'),
+    url('../fonts/FiraSansLight.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: Fira Sans, sans-serif !important;
+    font-size: 14px;
+}
+
+.overlay {
+	position: absolute;
+	width: 317px;
+	height: 175px;
+	background-color: #00000082;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	border-radius: 14px;
+}
+
+.overlay span {
+	font-size: 34px;
+}
+
+.categories-img {
+	width: 317px;
+	height: 175px;
+	border-radius: 14px;
+	margin-bottom: 8%;
+}
+
+.grid-buttons {
+    margin: 15px;
+}
+.grid-buttons button {
+    height: 40px;
+    width: 40px;
+}
+
+.category-list > .active > a {
+    font-weight: bold;
+}

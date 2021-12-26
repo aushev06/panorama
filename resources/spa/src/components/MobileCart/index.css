@@ -1,0 +1,27 @@
+.mobile_cart {
+    width: 100%;
+    position: fixed;
+    z-index: 10000;
+    background: #fff;
+    border: 1px solid #eaeaea;
+    height: 80px;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.mobile_cart_container {
+    width: 100%;
+    margin: 10px;
+    background: var(--main-bg-color);
+    border: navajowhite;
+    border-radius: 8px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}

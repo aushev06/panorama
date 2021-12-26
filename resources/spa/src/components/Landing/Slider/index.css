@@ -1,0 +1,31 @@
+.carousel {
+    max-height: 400px;
+}
+.carousel-item {
+    /*opacity: 0 !important;*/
+}
+.carousel-item.active {
+    height: inherit;
+    opacity: 1 !important;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.carousel-discount .carousel-item > a {
+    height: inherit;
+    width: inherit;
+    display: flex;
+    justify-content: center;
+}
+.carousel-discount .carousel-item > a > img {
+    /*width: fit-content;*/
+    /*object-fit: cover;*/
+    object-fit: contain;
+    object-position: center;
+    height: inherit;
+    width: inherit;
+}
+
+
+
+

@@ -1,0 +1,183 @@
+.btn-cart {
+    position: relative;
+    width: 6em;
+    height: 6em;
+    max-width: 35px;
+    max-height: 35px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    margin: 0 18px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-cart > img {
+    max-width: 15px;
+    max-height: 15px;
+    width: 2em;
+    height: 2em;
+}
+
+.btn-cart:hover,
+.btn-cart:focus {
+    box-shadow: 0px 0px 24px #EFAF84;
+    background: #FFFFFF;
+}
+
+.btn-cart:focus {
+    background: #EBEBEB;
+}
+
+.btn-cart__counter {
+    position: absolute;
+    width: 1.1em;
+    height: 1.1em;
+    top: -0.2em;
+    right: -0.2em;
+    border-radius: 50%;
+    background: #c99c7e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85em;
+}
+
+.btn-cart__counter > span {
+    color: #294053;
+    height: 70%;
+    width: 70%;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+@media screen and (max-width: 480px) {
+    .btn-cart {
+        width: 2em;
+        height: 2em;
+        max-width: 45px;
+        max-height: 45px;
+    }
+
+    .btn-cart > img {
+        /*max-width: 20px;*/
+        /*max-height: 20px;*/
+        /*width: 1.2em;*/
+        /*height: 1.2em;*/
+
+        max-width: 15px;
+        max-height: 15px;
+        width: 1em;
+        height: 1em;
+    }
+}
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+@media (min-width: 481px) and (max-width: 767px) {
+    .btn-cart {
+        width: 2em;
+        height: 2em;
+        max-width: 45px;
+        max-height: 45px;
+    }
+
+    .btn-cart > img {
+        max-width: 20px;
+        max-height: 20px;
+        width: 1.2em;
+        height: 1.2em;
+    }
+}
+
+
+/*
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+@media (min-width: 1281px) {
+    .btn-cart {
+        width: 6em;
+        height: 6em;
+        max-width: 45px;
+        max-height: 45px;
+    }
+
+    .btn-cart > img {
+        max-width: 20px;
+        max-height: 20px;
+        width: 2em;
+        height: 2em;
+    }
+
+    .btn-cart__counter {
+        position: absolute;
+        width: 1.5em;
+        height: 1.5em;
+        top: -0.2em;
+        right: -0.2em;
+        border-radius: 50%;
+        background: #c99c7e;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.85em;
+    }
+
+    .btn-cart__counter > span {
+        color: #294053;
+        height: 70%;
+        width: 70%;
+        border-radius: 50%;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 1em;
+    }
+}
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) {
+    .btn-cart {
+        width: 6em;
+        height: 6em;
+        max-width: 35px;
+        max-height: 35px;
+    }
+
+    .btn-cart > img {
+        width: 2em;
+        height: 2em;
+    }
+
+    .btn-cart__counter {
+        width: 1.4em;
+        height: 1.4em;
+        top: -0.3em;
+        right: -0.2em;
+    }
+}
+
+
+

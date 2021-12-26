@@ -1,0 +1,865 @@
+.delivery-page {
+
+    .delivery__wrapper {
+
+        .delivery-background {
+            background-image: url('/images/delivery-images/background-delivery.png'), linear-gradient(90.35deg, #294053 -1.36%, #836765 123.66%);
+            background-position: center center;
+            min-height: calc(100vh - 54px);
+            background-repeat: no-repeat;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-size: cover;
+            max-height: 930px;
+            height: 50em;
+
+            .delivery-block {
+                height: 100%;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                color: #fff;
+                max-width: 500px;
+                max-height: 615px;
+
+                h2 {
+                    font-size: 2em;
+                    margin-top: 0;
+                    //margin-top: 3em;
+                }
+
+                .delivery-block__cards {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    row-gap: 2em;
+                    column-gap: 1.5em;
+                    width: 100%;
+
+                    .delivery-block__card {
+                        background: #445263;
+                        border: 0.3px solid #7A8D9F;
+                        border-radius: 14px;
+                        width: 100%;
+
+                        &.time-and-quality {
+                            height: 16em;
+                        }
+
+                        &:last-child {
+                                grid-column: 1/3;
+                            grid-column-start: 1;
+                            height: 11em;
+                        }
+
+                        > div {
+                            min-height: 8em;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            max-width: 60%;
+                            width: 100%;
+                            margin: auto;
+                            height: 100%;
+
+                            > * {
+                                margin: 0
+                            }
+
+                        }
+
+                        .first-row {
+
+
+                            p {
+                                font-size: 0.9em;
+                                align-self: flex-start;
+                            }
+
+                            time {
+                                font-size: 1.5em;
+                            }
+                        }
+
+                        .second-row {
+
+                            div {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+
+                                span.large-text {
+                                    font-size: 4.7em;
+                                    margin-bottom: -0.3em;
+                                }
+                                :not(.large-text) {
+                                    font-size: 1.5em;
+                                }
+                            }
+
+                            > span {
+                                font-size: 0.8em;
+                                text-align: center;
+                            }
+
+                            hr {
+                                border-block-end-style: none;
+                                margin: 1em 0;
+                            }
+                        }
+
+                        .third-row {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: space-evenly;
+
+                            h3 {
+                                font-size: 1.5em;
+                                text-align: center;
+                            }
+
+                            span {
+                                font-size: 0.8em;
+                                margin-top: 1em;
+                            }
+
+                            ul {
+                                display: flex;
+                                flex-direction: row;
+                                width: 100%;
+                                justify-content: space-between;
+
+                                li {
+                                    font-size: 0.8em;
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+
+        .delivery-map-block {
+            .delivery-map-block__wrapper {
+                h2 {
+                    //margin-top: 3em;
+                    text-align: center;
+                    font-size: 2em;
+                }
+
+                .location-cards {
+                    width: 93%;
+
+                    .location-cities {
+                        display: flex;
+                        flex-wrap: wrap;
+                        //justify-content: space-between;
+                        justify-content: flex-start;
+                        margin-bottom: 5em;
+
+                        .location-city {
+                            background: #294053;
+                            border-radius: 23px;
+                            margin: 0.5em 0;
+                            color: #FFFFFF;
+                            padding: 0 2em;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            -webkit-column-gap: 1em;
+                            -moz-column-gap: 1em;
+                            column-gap: 1em;
+                            font-size: 1em;
+                            height: 2.5em;
+                            margin-right: 1em;
+                        }
+                    }
+                }
+
+                .delivery-map {
+                    position: relative;
+                    height: 100%;
+                    overflow: hidden;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    background-position: 67%;
+
+                    .bg-map {
+                        background-image: url('/images/delivery-images/delivery-map.png');
+                        //background-image: url('/images/delivery-images/magia-delivery-map-1.png');
+                        background-repeat: no-repeat;
+                        background-position: 67%;
+                        width: 100%;
+                        //width: 100vw;
+                        max-height: 50em;
+                        //height: 515px;
+                        height: 550px;
+                        background-size: cover;
+                    }
+
+                    .delivery-block-info {
+                        position: absolute;
+                        left: 3em;
+                        background: #445263;
+                        border: 0.3px solid #7A8D9F;
+                        border-radius: 14px;
+                        color: #fff;
+                        display: flex;
+                        flex-direction: column;
+                        padding: 0.5em 2em;
+
+                        max-width: 550px;
+                        max-height: 320px;
+
+                        > ul {
+                            height: 15em;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+
+                            > li:last-child {
+
+                            }
+
+                            > li {
+                                display: grid;
+                                grid-template-columns: 35px 1fr;
+                                align-items: center;
+                                column-gap: 1em;
+
+                                > span {
+                                    width: 35px;
+                                    height: 35px;
+
+                                    > svg {
+                                        width: inherit;
+                                        height: inherit;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .delivery__about-block {
+                margin-top: 5em;
+
+                .about-block__wrapper {
+                    display: flex;
+                    flex-direction: row;
+
+                    & > div {
+                        padding: 1em;
+                        width: 50%;
+
+                        > h2 {
+                            font-size: 2.2em;
+                            margin-top: 0;
+                            position: relative;
+                            padding-left: 1.2em;
+                            color: #EFAF84;
+
+                            &:before {
+                                content: "";
+                                background-image: url("data:image/svg+xml,%3Csvg width= '27' height= '2' viewBox= '0 0 27 2' fill= 'none' xmlns= 'http://www.w3.org/2000/svg' %3E%3Cpath d= 'M25.7802 1H1.21875' stroke= '%23D89F78' stroke-width= '2' stroke-linecap= 'round' stroke-linejoin= 'round' /%3E%3C/svg%3E%0A");
+                                position: absolute;
+                                height: 2px;
+                                width: 0.8em;
+                                top: 0.6em;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
+                            }
+
+                        }
+
+                        p.text-info {
+                            font-size: 0.9em;
+                        }
+
+                        > img {
+                            object-fit: contain;
+                        }
+                    }
+
+                    & > div:first-child {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+
+                    }
+
+                    & > div:last-child {
+                        display: flex;
+                        flex-direction: column-reverse;
+                        justify-content: center;
+
+                    }
+                }
+
+                .be-aware-block {
+                    background-image: url('/images/delivery-images/be-aware.png');
+                    background-position: top;
+                    //background-position: top;
+                    background-repeat: no-repeat;
+                    max-height: 850px;
+                    height: 60em;
+                    position: relative;
+                    margin-top: 5em;
+
+                    > div {
+                        max-height: 450px;
+                        height: 30em;
+                        position: absolute;
+                        top: calc(50% - 15em);
+                        left: 3em;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        align-items: flex-start;
+                        color: #fff;
+                        width: 50% !important;
+
+                        > h2 {
+                            font-size: 2.5em;
+                            line-height: 1.5em;
+                            margin: 0;
+                        }
+
+                        > p {
+                            font-size: 0.9em;
+                            line-height: 2em;
+                            width: 80% !important;
+                        }
+
+                        .buttons-block {
+                            display: flex;
+                            justify-content: space-between;
+                            width: 80% !important;
+
+                            img {
+                                display: none;
+                            }
+
+                            a.subscribe-btn {
+                                background: #EFAF84;
+                            }
+
+                            a {
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                justify-content: space-around;
+                                color: #FFFFFF;
+                                border: 1.1641px solid #FFFFFF;
+                                border-radius: 46px;
+                                max-height: 64px;
+                                max-width: 224px;
+                                height: 3em;
+                                width: 10em;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+@media (min-width: 320px) and (max-width: 480px) {
+
+    .delivery-page .delivery__wrapper .delivery-map-block .delivery__about-block {
+        max-height: 650px;
+
+        .about-block__wrapper  {
+            display: none;
+        }
+
+        .be-aware-block {
+            background-image: url('/images/delivery-images/be-aware-mobile-2.png');
+            background-repeat: no-repeat;
+            background-position-x: center;
+
+            > div {
+                width: 82% !important;
+                left: 9%;
+                top: 10%;
+                justify-content: unset;
+
+                > h2 {
+                    font-size: 1em;
+                    margin-bottom: 1em;
+                }
+
+                > p {
+                    margin: 0;
+                    font-size: 0.9em;
+                    width: 100% !important;
+                }
+
+                > .buttons-block {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100% !important;
+                    height: 10em;
+                    margin-top: auto;
+
+                    > img {
+                        display: block;
+                    }
+
+                    > a {
+                        max-height: 60px;
+                        width: 100%;
+                        max-width: 100%;
+                        height: 4em;
+                        display: grid;
+
+                        &.subscribe-btn {
+                            margin-top: -1em;
+                            margin-bottom: 1em;
+                        }
+
+                        &:last-child {
+                            grid-auto-flow: column;
+                            position: relative;
+
+                            svg {
+                                position: absolute;
+                                right: 2em;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+
+
+    .page-wrapper {
+        margin-top: 54px;
+        min-height: calc(100vh - 54px);
+    }
+
+    .delivery-page .delivery__wrapper {
+
+        .delivery-map-block .delivery-map-block__wrapper {
+
+            .delivery-map {
+                .bg-map {
+                    background-image: url('/images/delivery-images/delivery-map-mobile.png');
+                    //background-image: url('/images/delivery-images/magia-delivery-mobile-map-1.png');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    width: 100vw;
+                    max-height: 50em;
+                    height: 350px;
+                    background-size: cover;
+                    max-width: 100vw;
+                }
+
+                .delivery-block-info {
+                    position: initial;
+                    width: 95%;
+                    margin: 2em auto 0;
+                    max-height: 340px;
+
+                    ul {
+                        height: 25em;
+
+                        li {
+                            grid-template-columns: 30px 1fr;
+                            font-size: 1em;
+
+                            span {
+                                width: 25px;
+                                height: 25px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .location-cards .location-cities .location-city {
+                font-size: 0.7em;
+            }
+
+            h2 {
+                font-size: 1.7em;
+            }
+        }
+
+        .delivery-background {
+            min-height: calc(100vh + 60px);
+
+            .delivery-block {
+                max-height: 450px;
+
+                h2 {
+                    //margin-top: 3em;
+                    font-size: 1.7em;
+                }
+
+                .delivery-block__cards {
+                    width: 95%;
+                    margin: 0 auto;
+
+                    .delivery-block__card {
+
+                        &.time-and-quality {
+                            height: 13em;
+                        }
+
+                        .first-row time {
+                            font-size: 1.3em;
+                        }
+
+                        .second-row {
+                            > div {
+                                span.large-text {
+                                    font-size: 4em;
+                                }
+                            }
+
+                            > span {
+                                font-size: 0.9em;
+                            }
+                        }
+
+                        .third-row {
+                            max-width: 95%;
+
+                            > span {
+                                font-size: 1em;
+                                margin-top: -1.5em;
+                            }
+
+                            ul li {
+                                font-size: 0.9em;
+                            }
+                        }
+
+                        > div {
+                            max-width: 80%;
+                        }
+
+                        &:last-child {
+                            margin-bottom: 3em;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+@media screen and (max-width: 480px) {
+
+}
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+@media (min-width: 481px) and (max-width: 767px) {
+    .page-wrapper {
+        margin-top: 54px;
+        min-height: calc(100vh - 54px);
+    }
+
+    .delivery-page .delivery__wrapper .delivery-map-block .delivery__about-block {
+        max-height: 650px;
+
+        .about-block__wrapper  {
+            display: none;
+        }
+
+        .be-aware-block {
+            background-image: url('/images/delivery-images/be-aware-mobile-2.png');
+            background-repeat: no-repeat;
+            background-position-x: center;
+
+            > div {
+                width: 40% !important;
+                left: 31%;
+                top: 10%;
+                justify-content: unset;
+
+                > h2 {
+                    font-size: 1em;
+                    margin-bottom: 1em;
+                }
+
+                > p {
+                    margin: 0;
+                    font-size: 0.9em;
+                    width: 100% !important;
+                }
+
+                > .buttons-block {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100% !important;
+                    height: 10em;
+                    margin-top: auto;
+
+                    > img {
+                        display: block;
+                    }
+
+                    > a {
+                        max-height: 60px;
+                        width: 100%;
+                        max-width: 100%;
+                        height: 4em;
+                        display: grid;
+
+                        &.subscribe-btn {
+                            margin-top: -1em;
+                            margin-bottom: 1em;
+                        }
+
+                        &:last-child {
+                            grid-auto-flow: column;
+                            position: relative;
+
+                            svg {
+                                position: absolute;
+                                right: 2em;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+
+
+    .page-wrapper {
+        margin-top: 54px;
+        min-height: calc(100vh - 54px);
+    }
+
+    .delivery-page .delivery__wrapper {
+
+        .delivery-map-block .delivery-map-block__wrapper {
+
+            .delivery-map {
+                .bg-map {
+                    background-image: url('/images/delivery-images/delivery-map-mobile.png');
+                    //background-image: url('/images/delivery-images/magia-delivery-mobile-map-1.png');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    width: 100vw;
+                    max-height: 550px;
+                    height: 50em;
+                    min-height: 350px;
+                    background-size: cover;
+                    max-width: 100vw;
+                }
+
+                .delivery-block-info {
+                    position: initial;
+                    width: 95%;
+                    margin: 2em auto 0;
+                    max-height: 340px;
+
+                    ul {
+                        height: 25em;
+
+                        li {
+                            grid-template-columns: 30px 1fr;
+                            font-size: 1em;
+
+                            span {
+                                width: 25px;
+                                height: 25px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .location-cards .location-cities .location-city {
+                font-size: 0.7em;
+            }
+
+            h2 {
+                font-size: 1.7em;
+            }
+        }
+
+        .delivery-background {
+            min-height: calc(100vh + 60px);
+
+            .delivery-block {
+                max-height: 450px;
+
+                h2 {
+                    //margin-top: 3em;
+                    font-size: 1.7em;
+                }
+
+                .delivery-block__cards {
+                    width: 95%;
+                    margin: 0 auto;
+
+                    .delivery-block__card {
+
+                        &.time-and-quality {
+                            height: 13em;
+                        }
+
+                        .first-row time {
+                            font-size: 1.3em;
+                        }
+
+                        .second-row {
+                            > div {
+                                span.large-text {
+                                    font-size: 4em;
+                                }
+                            }
+
+                            > span {
+                                font-size: 0.9em;
+                            }
+                        }
+
+                        .third-row {
+                            max-width: 95%;
+
+                            > span {
+                                font-size: 1em;
+                                margin-top: -1.5em;
+                            }
+
+                            ul li {
+                                font-size: 0.9em;
+                            }
+                        }
+
+                        > div {
+                            max-width: 80%;
+                        }
+
+                        &:last-child {
+                            margin-bottom: 3em;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) {
+    //.delivery-page .delivery__wrapper .delivery-background {
+    //    min-height: calc(100vh - 54px);
+    //}
+
+}
+
+/*
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+@media (min-width: 1281px) {
+    //.delivery-page .delivery__wrapper .delivery-background {
+    //    min-height: calc(100vh - 84px);
+    //}
+
+    .page-wrapper {
+        min-height: calc(100vh - 54px);
+    }
+
+    .delivery-page .delivery__wrapper .delivery-map-block .delivery__about-block .about-block__wrapper > div {
+        &:first-child > img {
+            margin-top: 3em;
+        }
+
+        &:last-child > img {
+            margin-bottom: 3em;
+        }
+    }
+
+    .delivery-page .delivery__wrapper .delivery-map-block .delivery-map-block__wrapper .location-cards {
+        width: 50%;
+    }
+
+    .delivery-page .delivery__wrapper .delivery-map-block .delivery__about-block .about-block__wrapper > div > h2 {
+        font-size: 2.7em;
+    }
+
+    .delivery-page .delivery__wrapper .delivery-map-block .delivery-map-block__wrapper .delivery-map {
+        .bg-map {
+            background-position: 60%;
+        }
+
+        .delivery-block-info {
+            left: 15em;
+        }
+    }
+
+    .delivery-page .delivery__wrapper .delivery-map-block .delivery__about-block .be-aware-block > div {
+        width: inherit;
+        left: 6em;
+
+        p {
+            width: inherit;
+        }
+
+        .buttons-block {
+            width: inherit;
+
+            a {
+                height: 4em;
+                width: 13em;
+            }
+        }
+
+        > h2 {
+            font-size: 2.5em;
+            line-height: 1.7em;
+        }
+
+    }
+
+}
+
+
+
+

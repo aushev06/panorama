@@ -1,0 +1,218 @@
+
+.auth-wrapper {
+    min-height: 100vh;
+    background: rgba(0,0,0,.5);
+    height: 100%;
+    display: grid;
+}
+
+.auth-page-wrapper {
+    background-image: url('/images/auth/auth_background.png'), linear-gradient(90.35deg, #294053 -1.36%, #836765 123.66%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    margin-top: 0;
+}
+
+.activate-page {
+    min-height: calc(100vh - 84px);
+    display: flex;
+    //padding-top: 84px;
+
+    .auth__form {
+        max-height: 700px;
+        max-width: 700px;
+        width: 100%;
+        min-height: 300px;
+        /* height: 100%; */
+        background: #fff;
+        border-radius: 16px;
+        padding: 4em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: auto;
+
+        & > div {
+            margin-bottom: 2em;
+        }
+
+        & * {
+            color: #294053;
+        }
+
+        .magia-send-button {
+            color: #fff;
+            width: 15em;
+        }
+
+        .form__header {
+            h2 {
+                font-size: 1.5em;
+                margin: 0;
+            }
+        }
+
+        .form__content {
+
+            .activate__input {
+                margin-bottom: 1em;
+
+                label {
+                    font-size: 1em;
+                }
+
+                input {
+                    background: rgba(238, 238, 244, 0.47);
+                    border: 0;
+                    color: #294053;
+                }
+
+                label, input {
+                    padding-left: 0.5em !important;
+                }
+            }
+
+            .auth__auth-buttons {
+                margin-top:2em;
+                display: flex;
+                flex-direction: row;
+
+                & > * {
+                    margin-right: 1em;
+                    height: 3.5em;
+                    font-size: 0.9em;
+                }
+            }
+        }
+
+    }
+
+}
+
+.transparent-button {
+    background: #FFFFFF;
+    border: 1px solid #EFAF84;
+    width: 15em;
+}
+
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+@media (min-width: 320px) and (max-width: 480px) {
+
+    .auth-wrapper {
+        padding-top: 54px;
+    }
+
+    .activate-page {
+        padding: 0;
+        margin: 0;
+        //height: calc(100vh - 56px);
+        height: 100%;
+        border-radius: 0;
+
+        .auth__form {
+            width: 100%;
+            max-width: 100vw;
+            height: 100%;
+            padding: 0.5em;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            min-height: 100vh;
+            border-radius: 0;
+            padding-top: 3em;
+
+            & > div {
+                margin-bottom: 3em;
+            }
+        }
+    }
+
+    .form__content {
+        width: 100%;
+    }
+
+    .activate-page .auth__form .form__content .auth__auth-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .activate-page .auth__form .form__content .auth__auth-buttons > * {
+        margin-bottom: 1em;
+        width: 100%;
+        max-width: inherit;
+    }
+}
+
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .auth-wrapper {
+        padding-top: 54px !important;
+    }
+
+    .activate-page {
+        //padding-top: 54px;
+    }
+
+    .activate-page .auth__form {
+        border-radius: 0;
+        margin: 0;
+        max-width: 100vw;
+
+    }
+
+}
+
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) {
+    //.activate-page .auth__form {
+    //    border-radius: 0;
+    //    margin: 0;
+    //    max-width: 100vw;
+    //    max-height: 100vh;
+    //    justify-content: center;
+    //}
+    //
+    //
+    //.activate-page .auth__form .form__header,
+    //.activate-page .auth__form .form__content {
+    //    margin-bottom: 5em;
+    //}
+
+
+}
+
+/*
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+@media (min-width: 1281px) {
+     .block-cards__wrapper .wrapper__text {
+         font-size: 1.5em;
+     }
+
+    .activate-page h2 {
+        font-size: 2em;
+    }
+
+    .activate-page {
+        //margin-bottom: 1em;
+    }
+
+}
+
+

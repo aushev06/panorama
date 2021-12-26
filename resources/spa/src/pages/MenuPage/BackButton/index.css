@@ -1,0 +1,33 @@
+.categories__back-btn {
+    color: #000;
+    cursor: pointer;
+    height: 1em;
+    width: fit-content;
+    padding: 1em;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    transition: all .4s;
+}
+
+.categories__back-btn > svg {
+    height: 1em;
+    margin-right: 0.5em;
+}
+
+.categories__back-btn > svg > path {
+    color: #000;
+    transition: all .4s;
+}
+
+.categories__back-btn:hover {
+    color: #c99b7d;
+    transition: all .4s;
+}
+
+.categories__back-btn:hover > svg > path {
+    stroke: #c99b7d;
+    transition: all .4s;
+}
