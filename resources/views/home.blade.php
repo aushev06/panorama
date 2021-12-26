@@ -11,12 +11,11 @@
     <div class="deal-of-week" style="margin-bottom: 0px !important;">
         <div class="container">
             <div class="col-12 text-center" style="background: linear-gradient(to right,#f6efd2,#cead78); border-radius: 10px; padding: 15px;">
-                <h1 style="font-size: 1.4em; color: #2C150C;font-weight: bold; line-height: 30px; margin-bottom: 0px !important;">Доставка по-настоящему вкусной еды от ресторана №1 в Ялте.</h1>
+                <h1 style="font-size: 1.4em; color: #2C150C;font-weight: bold; line-height: 30px; margin-bottom: 0px !important;">Доставка по-настоящему вкусной еды от ресторана "Панорама"</h1>
             </div>
         </div>
         <div class="container" style="margin-top: 10px;">
             <div class="col-12 text-center">
-                <span style="color: #747272; line-height: initial;">* Ресторан JROO – победитель 2019 года по оценкам TripAdvisor среди 175+ ресторанов Ялты <a href="https://www.tripadvisor.ru/Restaurant_Review-g295378-d13001575-Reviews-CITY_CAFE_JROO_BURGER_STEAK-Yalta.html" style="color: saddlebrown;" target="_blank"> подробнее</a></span>
             </div>
         </div>
         <div class="container">

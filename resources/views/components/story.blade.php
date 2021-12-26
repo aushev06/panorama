@@ -10,7 +10,8 @@
                         <div class="featured-use text-md-right">
                             <div class="featured-use_intro order-2 order-md-1">
                                 <h5>JROO ?</h5>
-                                <p style="font-size: 13px!important; line-height: 20px !important; font-weight: bold;">Так звали быка, который стал символом первого ресторана JROO несколько веков назад.</p>
+                                <p style="font-size: 13px!important; line-height: 20px !important; font-weight: bold;">
+                                    Ресторан "Панорама" - это изысканное место, где каждый может окунуться в мир вкусной еды и приятных ощущений</p>
                             </div>
                             <div class="featured-use_icon text-md-right order-1 order-md-2 featured-use_icon-left">
                                 <div class="icon-detail"><img src="{{asset('frontend/images/icon-item/imput1.png')}}" alt=""></div>

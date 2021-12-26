@@ -49,13 +49,12 @@ $weekendEnd    = $settings->getWeekendClose($activeSettings);
                         <div class="header-left d-flex flex-column flex-md-row align-items-center">
                             <p class="d-flex align-items-center"><img
                                     src="{{asset('frontend/images/icon/map-marker.png')}}" style="width: 3em"><a
-                                    href="https://yandex.ru/maps/-/CGsruQ9e" style="color: black;">Крым,
-                                г. Ялта,
-                                ул.
-                                Игнатенко дом 3</a></p>
+                                    href="https://yandex.ru/maps/-/CGsruQ9e" style="color: black;">г. Магас
+                                    Проспект Зязикова, 2A
+                                    На крыше бизнес-отеля Магас</a></p>
                             <p class="d-flex align-items-center"><img
                                     src="{{asset('frontend/images/icon/phone.png')}}" style="width: 3em"><a
-                                    href="tel:+79780873337" style="color: #0b0b0b"> +7 (978) 087-33-37</a>
+                                    href="tel:+79287328477" style="color: #0b0b0b">  +7 (928) 732-84-77</a>
                             </p>
                             <p class="d-flex align-items-center"><img
                                     src="{{asset('frontend/images/icon/time-machine.png')}}" style="width: 3em">Пн-пт с
