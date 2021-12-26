@@ -13,7 +13,7 @@ use App\Http\Controllers\Admin\FoodController as Controller;
 @section('content')
     <div class="content-wrapper">
         <div class="container-fluid">
-            <!-- Breadcumbs-->
+            <!-- Breadcrumbs-->
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="{{route('admin.index')}}">Доска</a>
@@ -66,10 +66,10 @@ use App\Http\Controllers\Admin\FoodController as Controller;
                                     {{$model->name}}
                                 </td>
                                 <td>
-                                    <a href="{{route(Controller::ROUTE_SHOW, $model->id)}}"><i
+                                    <a href="{{route(Controller::ROUTE_SHOW, ['id' => $model->id])}}"><i
                                             class="fa fa-fw fa-eye"></i></a>
 
-                                    <a href="{{route(Controller::ROUTE_EDIT, $model->id)}}"><i
+                                    <a href="{{route(Controller::ROUTE_EDIT, ['id' => $model->id])}}"><i
                                             class="fa fa-fw fa-edit"></i></a>
 
                                     <a href="{{route(Controller::ROUTE_DESTROY, $model->id)}}" title="Удалить"

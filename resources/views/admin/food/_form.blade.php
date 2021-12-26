@@ -153,12 +153,12 @@ use App\Models\Food\models\FoodViewModel;
     </div>
 
 
-{{--    <div class="col-md-12">--}}
-{{--        <div class="form-group">--}}
-{{--            <label>Дополнительные изображения</label>--}}
-{{--            <input id="input-b1" name="imgs[]" type="file" multiple class="file" data-browse-on-zone-click="true">--}}
-{{--        </div>--}}
-{{--    </div>--}}
+    <div class="col-md-12">
+        <div class="form-group">
+            <label>Дополнительные изображения</label>
+            <input id="input-b1" name="imgs[]" type="file" multiple class="file" data-browse-on-zone-click="true">
+        </div>
+    </div>
 
     <div class="col-md-12">
         <div id="react-add-variants" data-foods='@json($foodProperties ?? [])'></div>
@@ -174,17 +174,6 @@ use App\Models\Food\models\FoodViewModel;
                 @endforeach
             </select>
         </div>
-
-        <div class="form-group">
-            <strong>Выберите дополнительные опции</strong>
-            <select name="options[]" class="form-control options" multiple>
-                @foreach($options as $option)
-                    <option
-                        {{true === $option['select'] ? 'selected' : ''}} value="{{$option['id']}}">{{$option['name']}}</option>
-                @endforeach
-            </select>
-        </div>
-
     </div>
 
 </div>

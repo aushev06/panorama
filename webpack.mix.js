@@ -1,15 +1,5 @@
 const mix = require('laravel-mix');
 
-
-mix.webpackConfig({
-    resolve: {
-        modules: [
-            path.resolve(__dirname, 'node_modules'),
-            path.resolve(__dirname, 'resources/spa/src')
-        ]
-    }
-});
-
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -23,8 +13,6 @@ mix.webpackConfig({
 
 mix.react('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css');
-
-mix.react('resources/spa/src/index.js', 'public/js');
 
 mix.styles([
     'public/frontend/css/animate.css',

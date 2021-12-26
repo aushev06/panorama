@@ -185,7 +185,7 @@ use App\Models\Order\Order;
                             </div>
                             <div class="form-group">
                                 <input type="radio" name="pay_type" id="paypal" value="{{Order::TYPE_ONLINE}}">
-                                <label for="paypal">Онлайн оплата</label>
+                            	<label for="paypal">Онлайн оплата</label>
                             </div>
                             <hr>
 

@@ -125,7 +125,6 @@ class TillypadService
     public function sendingOrderToTillypad(Order $order, array $properties = [])
     {
         if (true === env('SEND_TILLYPAD', false)) {
-            Log::info("Здесь");
             $json = [];
 
             $orderClient = $this->getClient($order);
@@ -153,7 +152,9 @@ class TillypadService
                     "PostCode"      => "1"
                 ];
             }
+
             try {
+
                 $client = new Client();
 
                 $response = $client->post('https://api.tillypad.online/_v1.0/Request.php', [
@@ -166,18 +167,19 @@ class TillypadService
                     'body' => json_encode($json),
                 ]);
 
-                $json = json_decode($response->getBody()->getContents(), true);
+                $responseJSON = json_decode($response->getBody()->getContents(), true);
 
-                if (true === isset($json[0]['ErrorNumber'])) {
+                if (true === isset($responseJSON[0]['ErrorNumber'])) {
                     throw new \Exception("Ошибка");
                 }
                 Log::info('Информация о заказе', [$response->getBody()->getContents()]);
-                Log::info("Массив", $json);
+                Log::info("Массив", $responseJSON ?? []);
+
 
             } catch (\Exception $exception) {
                 Log::info('Информация о заказе', [$response->getBody()->getContents()]);
                 Log::info("Массив", $json);
-                (new TelegramService)->sendToTelegram($order);
+//                (new TelegramService)->sendToTelegram($order);
             }
 
 

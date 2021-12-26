@@ -27,6 +27,7 @@ class Cart extends Model
     const ATTR_STATUS    = 'status';
 
     const TABLE_NAME = 'carts';
+
     protected $table = self::TABLE_NAME;
 
     const STATUS_ACTIVE   = 1;

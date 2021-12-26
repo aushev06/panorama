@@ -12,14 +12,9 @@
 
         <li><strong style="font-weight: bold;">Дата:</strong>{{$model->date_delivery}}</li>
         <li><strong style="font-weight: bold;">Время:</strong>{{$model->time_delivery}}</li>
-{{--        <li><strong style="font-weight: bold;">Адрес:</strong>{{$model->address}}</li>--}}
-        <li><strong style="font-weight: bold;">Тип доставки:</strong>{{$model::getDeliveryVariants()[$model->delivery_type]}}</li>
-        @if($model->delivery_type === $model::DELIVERY_TYPE_COURIER)
-            <li><strong style="font-weight: bold;">Адрес:</strong>{{$model->city}}</li>
-        @endif
-        <li><strong style="font-weight: bold;">Телефон:</strong>{{$model->phone}}</li>
-{{--        <li><strong style="font-weight: bold;">Телефон:</strong><a href="tel:+{{$model->phone}}">+{{$model->phone}}</a> </li>--}}
-        <li><strong style="font-weight: bold;">Сумма:</strong>{{$model->total + $model->delivery_cost}}</li>
+        <li><strong style="font-weight: bold;">Адрес:</strong>{{$model->fullAddress}}</li>
+        <li><strong style="font-weight: bold;">Телефон:</strong> {{$model->phone}}</li>
+        <li><strong style="font-weight: bold;">Сумма:</strong>{{$model->total}}</li>
 
 
     </ul>

@@ -4,24 +4,31 @@ namespace App\Services\Telegram;
 
 
 use App\Models\Order\Order;
-use App\Models\Setting;
 use GuzzleHttp\Client;
-use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
 
 class TelegramService
 {
-    public function sendToTelegram(Order $order, array $properties)
+    public function sendToTelegram(Order $order)
     {
-        $setting = Cache::get('settings');
-        $message = "Новый заказ на сайте. Ссылка на заказ - " . 'http://ingvine-food.ru/order/' . $order['id'];
-        $chatId  = $setting[Setting::SETTING_TELEGRAM_CHAT_ID]['value'];
-        $botId   = $setting[Setting::SETTING_TELEGRAM_BOT_ID]['value'];
-        $client  = new Client([
-            'http_errors' => false
-        ]);
-        Log::info('tes', [$chatId, $botId]);
-        $response = $client->get('https://api.telegram.org/' . $botId . '/sendMessage?chat_id=' . $chatId . '&text=' . $message);
+        $message = 'Новый заказ на сайте. Ссылка на заказ - https://dostavka-jroo.com/order-telegram/' . $order->id;
+        $botId = 'bot972483178:AAEZccqLHo5Ce2f9bOSCNUkhFB17t_uI5hs';
+        $chatId = '-1001444359792';
+        $client = new Client(
+            [
+                'http_errors' => false
+            ]
+        );
+//        Log::info('tes', [$chatId, $botId]);
+        $response = $client->get(
+            'https://api.telegram.org/' . $botId . '/sendMessage?chat_id=' . $chatId . '&text=' . $message
+        );
+
+//        $client  = new Client([
+//            'http_errors' => false
+//        ]);
+//
+//        $response = $client->post('http://limitless-journey-95386.herokuapp.com/public/jroo/?text=' . "https://dostavka-jroo.com/order-telegram/" . $order->id);
 
     }
 }

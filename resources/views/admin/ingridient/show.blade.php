@@ -14,7 +14,7 @@ use App\Models\Ingridient\IngridientFoods;
 @section('content')
     <div class="content-wrapper">
         <div class="container-fluid">
-            <!-- Breadcumbs-->
+            <!-- Breadcrumbs-->
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="{{route(Controller::ROUTE_INDEX)}}">{{Controller::TITLE}}</a>
@@ -65,7 +65,7 @@ use App\Models\Ingridient\IngridientFoods;
                                        aria-label="Отключить"
                                        data-confirm="Вы уверены, что хотите отключить блюдо с этим ингридиентом?"
                                        data-method="PUT"
-                                       data-redirect="{{route(Controller::ROUTE_SHOW, $model->id)}}"><i
+                                       data-redirect="{{route(Controller::ROUTE_SHOW, ['id' => $model->id])}}"><i
                                             class="fa fa-stop"></i></a>
                                 @else
                                     <a href="{{route(Controller::ROUTE_UPDATE_STATUS, ['ingridientID' => $model->id, 'foodID' => $food->id])}}" title="Включить"
@@ -73,7 +73,7 @@ use App\Models\Ingridient\IngridientFoods;
                                        aria-label="Включить"
                                        data-confirm="Вы уверены, что хотите включить блюдо с этим ингридиентом?"
                                        data-method="PUT"
-                                       data-redirect="{{route(Controller::ROUTE_SHOW, $model->id)}}"><i
+                                       data-redirect="{{route(Controller::ROUTE_SHOW, ['id' => $model->id])}}"><i
                                             class="fa fa-play"></i></a>
                                 @endif
                             </td>

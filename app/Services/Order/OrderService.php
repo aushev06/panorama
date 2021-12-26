@@ -26,7 +26,7 @@ class OrderService
     private $orderRepository;
 
     /**
-     * @var mixed
+     * @var Payment
      */
     private $payment;
 
@@ -48,7 +48,7 @@ class OrderService
             /**
              * @var Cart $cart
              */
-            $cart       = Cart::where(Cart::ATTR_SESSION, $request->get(Cart::SESSION_KEY))->first();
+            $cart       = Cart::where(Cart::ATTR_SESSION, Session::get(Cart::SESSION_KEY))->first();
             $attributes = $request->all([
                 Order::ATTR_NAME,
                 Order::ATTR_PHONE,
@@ -62,13 +62,19 @@ class OrderService
                 Order::ATTR_ENTRANCE,
                 Order::ATTR_INTERCOM,
                 Order::ATTR_BUILDING,
-                Order::ATTR_USER_ID,
-                Order::ATTR_DELIVERY_COST,
-                Order::ATTR_ADDRESS
             ]);
 
             $attributes['cart_id'] = $cart->id;
             $attributes['total']   = $cart->total;
+
+            $attributes['comment'] .= <<<TEXT
+            \n
+            Сдача с: {$request->get('change')}
+            Количество приборов: {$request->get('number_appliances')}
+            Количество перчаток L: {$request->get('gloves_l')}
+            Количество перчаток M: {$request->get('gloves_m')}
+            Количество перчаток S: {$request->get('gloves_s')}
+TEXT;
 
             $order = $this->orderRepository->store($attributes);
             //$cart->status = Cart::STATUS_INACTIVE;
@@ -76,8 +82,8 @@ class OrderService
             //$cart->delete();
             return $order;
         } catch (\Throwable $exception) {
-
-            throw new \Exception($exception->getMessage());
+            dd($exception);
+            throw new \Exception('Возникла непридвиденная ошибка');
         }
 
     }

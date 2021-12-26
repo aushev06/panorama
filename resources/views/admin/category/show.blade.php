@@ -10,7 +10,7 @@
 @section('content')
     <div class="content-wrapper">
         <div class="container-fluid">
-            <!-- Breadcumbs-->
+            <!-- Breadcrumbs-->
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="{{route('categories.index')}}">Категории</a>

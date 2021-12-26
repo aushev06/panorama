@@ -13,13 +13,10 @@ use App\Models\Food\models\FoodViewModel;
 @section('content')
     <div class="content-wrapper">
         <div class="container-fluid">
-            <!-- Breadcumbs-->
+            <!-- Breadcrumbs-->
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="{{route(Controller::ROUTE_INDEX)}}">{{Controller::TITLE}}</a>
-                </li>
-                <li class="breadcrumb-item">
-                    <a href="{{route(Controller::ROUTE_INDEX) . '?category=' . $model->category_id}}">{{$model->category}}</a>
                 </li>
 
                 <li class="breadcrumb-item active">{{$model->name}}</li>

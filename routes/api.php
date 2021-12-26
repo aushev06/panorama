@@ -26,21 +26,9 @@ Route::group(['prefix' => 'food'], function () {
 
 Route::apiResource('categories', 'Api\V1\CategoryController')->middleware('api.headers');
 Route::apiResource('foods', 'Api\V1\FoodApiController')->middleware('api.headers');
-Route::apiResource('promotions', 'Api\V1\PromotionsApiController')->middleware('api.headers');
-
+Route::post("set-position", 'Admin\CategoryController@setPosition');  // Сортировка категорий
 
 Route::group(['prefix' => 'cart'], function () {
-
-    Route::options('/cart-property', 'CartController@store')->middleware('api.headers');
-    Route::options('/', 'CartController@store')->middleware('api.headers');
-    Route::options('/add-order', 'CartController@store')->middleware('api.headers');
-
-    Route::post('/', 'CartController@store')->middleware('api.headers');
-    Route::post('/add-to-cart', 'CartController@store')->name('cart.add-to-cart')->middleware('api.headers');
-    Route::post('/get', 'CartController@show')->name('cart.get')->middleware('api.headers');
-    Route::post('/add-order', 'OrderController@addOrder')->name('cart.addOrder')->middleware('api.headers');
-    Route::post('/activate-coupon', 'CartController@activateCoupon')->name('cart.activate-coupon');
-
     Route::delete('/{id}', 'CartController@destroy')->name('cart.destroy'); // Удаление корзины
 
     Route::put('/cart-property',

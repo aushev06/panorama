@@ -12,7 +12,7 @@ use App\Http\Controllers\Admin\OrderController as Controller;
 @section('content')
     <div class="content-wrapper">
         <div class="container-fluid">
-            <!-- Breadcumbs-->
+            <!-- Breadcrumbs-->
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="{{route('admin.index')}}">Доска</a>

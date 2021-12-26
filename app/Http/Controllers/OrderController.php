@@ -24,16 +24,13 @@ class OrderController extends Controller
 
     public function addOrder(OrderRequest $request)
     {
-
         $order = $this->orderService->save($request);
 
-//        if ($order->pay_type == Order::TYPE_ONLINE) {
-            return response()->json([
-                'redirect_url' => $this->orderService->setValuesForPayment($order)
-            ]);
-//        }
+        if ($order->pay_type == Order::TYPE_ONLINE) {
+            return Redirect::away($this->orderService->setValuesForPayment($order));
+        }
 
-//        return response()->json($order);
+        return redirect()->route('complete', $order->id);
     }
 
     public function webhook(Request $request)

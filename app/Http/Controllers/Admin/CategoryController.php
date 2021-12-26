@@ -23,7 +23,7 @@ class CategoryController extends Controller
     public function __construct(CategoryService $categoryService, Category $model)
     {
         $this->categoryService = $categoryService;
-        $this->model = $model;
+        $this->model           = $model;
     }
 
     /**
@@ -33,10 +33,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::query()
-            ->whereNull('parent_id')
-            ->orderBy('id')
-            ->paginate(15);
+        $categories = Category::orderBy(Category::ATTR_ORDER)->paginate(15);
 
         return view('admin.category.index', ['categories' => $categories]);
     }
@@ -48,24 +45,19 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        $categories = Category::with('childCategories')
-            ->select(['id', 'name', 'parent_id'])
-            ->whereNull('parent_id')
-            ->get();
-
-        return view('admin.category.create', ['categories' => $categories]);
+        return view('admin.category.create');
     }
 
     public function store(CategoryRequest $request)
     {
         $category = $this->categoryService->save($request);
-        return redirect()->route('categories.show',  $category->id);
+        return redirect()->route('categories.show', ['id' => $category->id]);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -78,21 +70,12 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $category = $this->model::findOrFail($id);
-        $categories = Category::with('childCategories')
-            ->select(['id', 'name', 'parent_id'])
-            ->whereNull('parent_id')
-            ->get();
-
-        return view('admin.category.edit', [
-            'category' => $category,
-            'categories' => $categories
-        ]);
+        return view('admin.category.edit', ['category' => $this->model::findOrFail($id)]);
     }
 
 
@@ -110,7 +93,7 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -118,5 +101,15 @@ class CategoryController extends Controller
         $this->model::find($id)->delete();
 
         return redirect()->route('categories.index');
+    }
+
+    public function setPosition(Request $request)
+    {
+        foreach ($request->post('blocks') ?? [] as $item) {
+            $model        = $this->model::findOrFail($item['id']);
+            $model->order = $item['position'];
+            $model->save();
+        }
+
     }
 }

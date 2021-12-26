@@ -14,11 +14,12 @@ use Illuminate\Database\Eloquent\Model;
 class CouponCart extends Model
 {
     const TABLE_NAME = 'coupon_cart';
-    protected $table = self::TABLE_NAME;
 
     const ATTR_ID        = 'id';
     const ATTR_COUPON_ID = 'coupon_id';
     const ATTR_CART_ID   = 'cart_id';
+
+    protected $table = self::TABLE_NAME;
 
     protected $fillable = [
         self::ATTR_ID,

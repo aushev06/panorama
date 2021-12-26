@@ -18,5 +18,4 @@ class RecomendFood extends Model
     const ATTR_FOOD_RECOMEND_ID = 'food_recomend_id';
 
     const TABLE_NAME = 'recomend_foods';
-    protected $table = self::TABLE_NAME;
 }

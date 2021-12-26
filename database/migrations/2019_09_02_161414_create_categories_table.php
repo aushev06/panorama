@@ -24,8 +24,6 @@ class CreateCategoriesTable extends Migration
             $table->text('description')->nullable()->comment('Описание');
             $table->string('slug')->unique();
             $table->integer('parent_id')->unsigned()->nullable()->comment('Родительская категория');
-            $table->integer('order')->unsigned()->nullable()->comment('Сортировка');
-            $table->integer('status')->unsigned()->default(1)->comment('Видимость категории');
             $table->timestamps();
             $table->softDeletes();
 

@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="Aushev">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Магия - Админ панель</title>
+    <title>Jroo - Админ панель</title>
 
     <!-- Favicons-->
     <link rel="shortcut icon" href="{{ asset('admin_assets/img/favicon.ico')}}" type="image/x-icon">
@@ -37,7 +37,7 @@
 <body class="fixed-nav sticky-footer" id="page-top">
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-default fixed-top" id="mainNav">
-    <a class="navbar-brand" href="{{route('admin.index')}}">Магия - Админ панель</a>
+    <a class="navbar-brand" href="{{route('admin.index')}}">JROO - Админ панель</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
             data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
             aria-label="Toggle navigation">
@@ -51,7 +51,7 @@
 <footer class="sticky-footer">
     <div class="container">
         <div class="text-center">
-            <small>Copyright © Magia-Delivery {{date("Y")}}</small>
+            <small>Copyright © JROO {{date("Y")}}</small>
         </div>
     </div>
 </footer>
@@ -65,23 +65,19 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Готовы выйти?</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
                 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <div class="modal-body">Выберите «Выйти» ниже, если вы готовы завершить текущий сеанс.</div>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Отмена</button>
-                <a class="btn btn-danger" onclick="$('#logout').submit()">Выйти</a>
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" href="login.html">Logout</a>
             </div>
         </div>
     </div>
 </div>
-
-<form id="logout" method="post" action="{{route('logout')}}">
-    @csrf
-</form>
 <!-- Bootstrap core JavaScript-->
 <script src="{{ asset('admin_assets/vendor/jquery/jquery.min.js')}}"></script>
 <script src="{{ asset('admin_assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
@@ -106,7 +102,7 @@
 
 <script src="{{ asset('admin_assets/js/custom.js')}}"></script>
 <script src="{{ asset('admin_assets/js/admin.js')}}"></script>
-
+<script src="{{asset('admin_assets/js/jquery-ui.min.js')}}"></script>
 <script src="{{mix('js/app.js')}}"></script>
 
 </body>

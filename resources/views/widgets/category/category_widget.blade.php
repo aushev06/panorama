@@ -24,7 +24,7 @@
                 <a class="department-link"
                    href="{{route('foods.index')}}">
                     <img
-                        src="http://jro.webshad.ru/storage/categories/STbE0ewEd1Y6BL9h8haZrCS8uGF04Y4R89v9WFQT.png"
+                        src="https://dostavka-jroo.com/storage/categories/STbE0ewEd1Y6BL9h8haZrCS8uGF04Y4R89v9WFQT.png"
                         style="width: 30px ; margin-right: 15px;">Все блюда
                 </a>
             </li>

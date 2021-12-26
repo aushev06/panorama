@@ -11,18 +11,8 @@ use App\Http\Controllers\Admin\FoodController as Controller;
 @section('content')
     <div class="content-wrapper">
         <div class="box_general padding_bottom">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                    <a href="{{route(Controller::ROUTE_INDEX)}}">{{Controller::TITLE}}</a>
-                </li>
-                <li class="breadcrumb-item">
-                    <a href="{{route(Controller::ROUTE_INDEX) . '?category=' . $model->category_id}}">{{$model->category->name}}</a>
-                </li>
-
-                <li class="breadcrumb-item active">{{$model->name}}</li>
-            </ol>
             <div class="header_box version_2">
-                <h2><i class="fa fa-cutlery" aria-hidden="true"></i>Редактирование блюда</h2>
+                <h2><i class="fa fa-cutlery" aria-hidden="true"></i>Добавление блюда</h2>
             </div>
 
 
@@ -34,8 +24,7 @@ use App\Http\Controllers\Admin\FoodController as Controller;
                     'variants' => $variants,
                     'model' => $model,
                     'foodProperties' => $foodProperties,
-                    'foods' => $foods,
-                    'options' => $options,
+                    'foods' => $foods
                 ])
                 <button class="btn btn-success">Сохранить</button>
             </form>

@@ -42,11 +42,6 @@ class FoodPropertyItem
      */
     public $food_id;
 
-    /**
-     * @var string
-     */
-    public $img;
-
     public function __construct(FoodProperty $property)
     {
         $this->id         = $property->id;
@@ -56,6 +51,5 @@ class FoodPropertyItem
         $this->is_visible = $property->is_visible;
         $this->sort       = $property->sort;
         $this->food_id    = $property->food_id;
-        $this->img        = $property->img;
     }
 }

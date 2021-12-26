@@ -33,7 +33,7 @@ class OrderRequest extends FormRequest
     {
         return [
             'name'  => 'required',
-            'phone' => ['required'],
+            'phone' => 'required',
         ];
     }
 }

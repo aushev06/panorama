@@ -14,36 +14,19 @@
         </li>
 
 
-{{--        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">--}}
-{{--            <a class="nav-link" href="{{route('ingridients.index')}}">--}}
-{{--                <i class="fa fa-stop" aria-hidden="true"></i>--}}
-{{--                <span class="nav-link-text">Стоп лист</span>--}}
-{{--            </a>--}}
-{{--        </li>--}}
-
-
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Settings">
-            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseSettings"
-               data-parent="#Categories">
-                <i class="fa fa-book"></i>
-                <span class="nav-link-text">Настройки</span>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+            <a class="nav-link" href="{{route('ingridients.index')}}">
+                <i class="fa fa-stop" aria-hidden="true"></i>
+                <span class="nav-link-text">Стоп лист</span>
             </a>
-            <ul class="sidenav-second-level collapse" id="collapseSettings">
-                <li>
-                    <a class="nav-link" href="{{route('setting.index')}}">
-                        <i class="fa fa-stop" aria-hidden="true"></i>
-                        <span class="nav-link-text">Настройки подключений</span>
-                    </a>
-                </li>
-                <li>
-                    <a class="nav-link" href="{{route('site-setting.index')}}">
-                        <i class="fa fa-stop" aria-hidden="true"></i>
-                        <span class="nav-link-text">Настройки сайта</span>
-                    </a>
-                </li>
-            </ul>
         </li>
 
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+            <a class="nav-link" href="{{route('settings.index')}}">
+                <i class="fa fa-stop" aria-hidden="true"></i>
+                <span class="nav-link-text">Настройки</span>
+            </a>
+        </li>
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Категории">
             <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseCategories"
@@ -82,81 +65,18 @@
             </ul>
         </li>
 
-
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Категории">
-            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseOptionCategories"
-               data-parent="#Categories">
-                <i class="fa fa-book"></i>
-                <span class="nav-link-text">Категории опций</span>
-            </a>
-            <ul class="sidenav-second-level collapse" id="collapseOptionCategories">
-                <li>
-                    <a href="{{route('option-categories.index')}}">Все</a>
-                </li>
-                <li>
-                    <a href="{{route('option-categories.create')}}">Создать</a>
-                </li>
-            </ul>
-        </li>
-
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Категории">
-            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseOption"
-               data-parent="#Categories">
-                <i class="fa fa-book"></i>
-                <span class="nav-link-text">Опции</span>
-            </a>
-            <ul class="sidenav-second-level collapse" id="collapseOption">
-                <li>
-                    <a href="{{route('options.index')}}">Все</a>
-                </li>
-                <li>
-                    <a href="{{route('options.create')}}">Создать</a>
-                </li>
-            </ul>
-        </li>
-
-
-{{--        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Купоны">--}}
-{{--            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseCoupon"--}}
-{{--               data-parent="#Food">--}}
-{{--                <i class="fa fa-align-justify" aria-hidden="true"></i>--}}
-{{--                <span class="nav-link-text">&nbsp;Купоны</span>--}}
-{{--            </a>--}}
-{{--            <ul class="sidenav-second-level collapse" id="collapseCoupon">--}}
-{{--                <li>--}}
-{{--                    <a href="{{route('coupon.index')}}">Все</a>--}}
-{{--                </li>--}}
-{{--                <li>--}}
-{{--                    <a href="{{route('coupon.create')}}">Добавить</a>--}}
-{{--                </li>--}}
-{{--            </ul>--}}
-{{--        </li>--}}
-        @if( config('app.SEND_PHONE_MESSAGE_OPERATION') === true )
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Смс коды">
-            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseSms">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Купоны">
+            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseCoupon"
+               data-parent="#Food">
                 <i class="fa fa-align-justify" aria-hidden="true"></i>
-                <span class="nav-link-text">&nbsp;Смс коды</span>
+                <span class="nav-link-text">&nbsp;Купоны</span>
             </a>
-            <ul class="sidenav-second-level collapse" id="collapseSms">
+            <ul class="sidenav-second-level collapse" id="collapseCoupon">
                 <li>
-                    <a href="{{route('sms.index')}}">Все</a>
+                    <a href="{{route('coupon.index')}}">Все</a>
                 </li>
-            </ul>
-        </li>
-        @endif
-
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Акции и предложения">
-            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapsePromotions">
-                <i class="fa fa-align-justify" aria-hidden="true"></i>
-                <span class="nav-link-text">&nbsp;Акции и предложения</span>
-            </a>
-            <ul class="sidenav-second-level collapse" id="collapsePromotions">
                 <li>
-                    <a href="{{route('promotions.index')}}">Все</a>
-                </li>
-
-                <li>
-                    <a href="{{route('promotion-cards.index')}}">Карточки</a>
+                    <a href="{{route('coupon.create')}}">Добавить</a>
                 </li>
             </ul>
         </li>
@@ -175,13 +95,6 @@
                     <a href="{{route('order.create')}}">Добавить</a>
                 </li>
             </ul>
-        </li>
-
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Очистка кэша">
-            <a class="nav-link" href="{{route('cache:clear')}}">
-                <i class="fa fa-stop" aria-hidden="true"></i>
-                <span class="nav-link-text">Очистка кэша</span>
-            </a>
         </li>
 
     </ul>

@@ -12,7 +12,7 @@
                 <form method="post" action="{{route('categories.store')}}" class="create-form"
                       enctype="multipart/form-data">
                     @csrf
-                    @include('admin.category._form', ['category' => new \App\Models\Category\Category()])
+                    @include('admin.category._form')
                     <button class="btn badge-primary" type="submit">Добавить</button>
                 </form>
             </div>

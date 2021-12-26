@@ -1,6 +1,12 @@
 @extends('admin.layout.main')
 
 @section('content')
+    <?php
+    /**
+     * @var \App\Dto\FoodStatistic[] $foods
+     * @var \App\Dto\ClientStatistic[] $clients
+     */
+    ?>
     <div class="content-wrapper">
         <div class="container-fluid">
             <!-- Breadcumbs-->
@@ -62,6 +68,52 @@
                                 </span>
                             </a>
                         </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="text-center font-weight-bold m-2">Статистика по блюдам:</div>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>Название</th>
+                                <th>Кол-во</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            @foreach($foods as $food)
+                                <tr>
+                                    <td>{{$food->name}}</td>
+                                    <td>{{$food->count}}</td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="text-center font-weight-bold m-2">Статистика по клиентам:</div>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>Имя</th>
+                                <th>Кол-во</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            @foreach($clients as $client)
+                                <tr>
+                                    <td>{{$client->name}}</td>
+                                    <td>{{$client->count}}</td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

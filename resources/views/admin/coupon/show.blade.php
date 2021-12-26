@@ -12,7 +12,7 @@ use App\Http\Controllers\Admin\FoodController as Controller;
 @section('content')
     <div class="content-wrapper">
         <div class="container-fluid">
-            <!-- Breadcumbs-->
+            <!-- Breadcrumbs-->
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="{{route(Controller::ROUTE_INDEX)}}">{{Controller::TITLE}}</a>

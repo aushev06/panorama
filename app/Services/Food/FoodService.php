@@ -9,7 +9,6 @@ use App\Models\Food\Food;
 use App\Models\Food\FoodInfo;
 use App\Models\Food\FoodProperty;
 use App\Models\Image\Image;
-use Illuminate\Support\Arr;
 
 class FoodService
 {
@@ -33,27 +32,15 @@ class FoodService
             $food->img = $request->file('img')->store('foods', 'public');
         }
 
-        $isActive = Arr::where($request->post('FoodProperty'), function ($model) {
-            return (int)$model['is_visible'] === 1;
-        });
-
-        $food->status = !$isActive ? 0 : $food->status;
-
         $food->save();
 
         // ==== Добавление вариаций
 
         foreach ($request->post('FoodProperty') as $key => $property) {
-            $foodPropertyImages = $request->file('fp_img');
-
             $foodProperty = new FoodProperty();
             $foodProperty->fill($property);
             $foodProperty->sort    = $key;
             $foodProperty->food_id = $food->id;
-            if ( isset($foodPropertyImages[$key]) && $foodPropertyImages[$key])
-            {
-                $foodProperty->img = $foodPropertyImages[$key]->store('foods', 'public');
-            }
             $foodProperty->save();
         }
 
@@ -68,13 +55,13 @@ class FoodService
 
 
         $food->recomend()->sync($request->post('recomendID'));
-        $food->options()->sync($request->post('options'));
+
         if ($request->file('imgs')) {
 
             foreach ($request->file('imgs') as $file) {
-                $fileModel           = new Image();
-                $fileModel->image    = $file->store('foods', 'public');
-                $fileModel->model    = $fileModel::MODEL_FOOD;
+                $fileModel = new Image();
+                $fileModel->image = $file->store('foods', 'public');
+                $fileModel->model = $fileModel::MODEL_FOOD;
                 $fileModel->model_id = $food->id;
                 $fileModel->save();
             }
@@ -103,35 +90,21 @@ class FoodService
             Food::ATTR_DESCRIPTION
         ]));
 
-
         $model->mitm_id   = 0;
         $model->mitm_name = "";
 
         if ($request->file('img')) {
             $model->img = $request->file('img')->store('foods', 'public');
         }
-
-        $isActive = Arr::where($request->post('FoodProperty'), function ($model) {
-            return (int)$model['is_visible'] === 1;
-        });
-
-        $model->status = sizeof($isActive) > 0 ? $model->status : 0;
-
         $model->save();
 
         // ==== Обновление вариаций
 
         foreach ($request->post('FoodProperty') as $key => $property) {
-            $foodPropertyImages = $request->file('fp_img');
-
             $foodProperty = FoodProperty::find($property['id']) ?? new FoodProperty();
             $foodProperty->fill($property);
             $foodProperty->food_id = $model->id;
-            if ( isset($foodPropertyImages[$key]) && $foodPropertyImages[$key])
-            {
-                $foodProperty->img = $foodPropertyImages[$key]->store('foods', 'public');
-            }
-//            $foodProperty->img     = $request->file('fp_img')[$key]->store('foods', 'public');
+
             $foodProperty->save();
         }
 
@@ -144,7 +117,7 @@ class FoodService
         }
 
         $model->recomend()->sync($request->post('recomendID'));
-        $model->options()->sync($request->post('options'));
+
 
         return $model;
 

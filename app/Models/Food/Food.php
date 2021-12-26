@@ -4,8 +4,6 @@ namespace App\Models\Food;
 
 use App\Models\Ingridient\IngridientFoods;
 use App\Models\Category\Category;
-use App\Models\Option\Option;
-use App\Models\Option\OptionFood;
 use App\Models\RecomendFood\RecomendFood;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
@@ -45,7 +43,7 @@ class Food extends Model
 
     protected $table = self::TABLE_NAME;
 
-    protected $with = ['properties', 'options'];
+    protected $with = ['properties'];
 
     protected $fillable = [
         self::ATTR_NAME,
@@ -131,12 +129,12 @@ class Food extends Model
 
     public function getImgAttribute($value)
     {
-        return !$value ? asset('admin_assets/img/no_image.png') : url('storage/' . $value);
+        return !$value ? asset('admin_assets/img/no_image.png') : asset('storage/' . $value);
     }
 
     public function getDescriptionAttribute($value)
     {
-        return true === empty($value) ? "" : $value;
+        return true === empty($value) ? "Не заполнено" : $value;
     }
 
 //    public function getStatusAttribute($value)
@@ -150,26 +148,12 @@ class Food extends Model
         return $this->hasOne(FoodInfo::class, 'food_id', 'id');
     }
 
-    public function recomend()
-    {
+    public function recomend() {
         return $this->belongsToMany(
             Food::class,
             RecomendFood::TABLE_NAME,
             RecomendFood::ATTR_FOOD_ID,
             RecomendFood::ATTR_FOOD_RECOMEND_ID
-        );
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
-     */
-    public function options()
-    {
-        return $this->belongsToMany(
-            Option::class,
-            OptionFood::TABLE_NAME,
-            OptionFood::ATTR_FOOD_ID,
-            OptionFood::ATTR_OPTION_ID
         );
     }
 }

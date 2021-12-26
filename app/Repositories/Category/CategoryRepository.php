@@ -19,14 +19,13 @@ class CategoryRepository
     public function get()
     {
         return Cache::remember(__CLASS__ . __METHOD__, 5000, function () {
-            $categories = Category::get()->where('status', 1);
-            return $categories;
+            return $categories = Category::get();
         });
     }
 
     public function findBySlug(string $slug): ?Category
     {
-        $category = Category::where([Category::ATTR_SLUG => $slug])->where([Category::ATTR_STATUS, 1])->first();
+        $category = Category::where([Category::ATTR_SLUG => $slug])->first();
 
         if (null === $category) {
             throw new NotFoundHttpException("Данная категория не найдена");
@@ -38,7 +37,8 @@ class CategoryRepository
     public function builder()
     {
 
-        return Category::with('foods.options')->with('childCategories')->whereNull('parent_id')->where('status', 1);
+        return Category::with('foods')
+            ->groupBy([Category::TABLE_NAME . '.' . Category::ATTR_ID]);
 
     }
 

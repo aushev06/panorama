@@ -8,9 +8,11 @@ use App\Models\Cart\CartProperty;
 use App\Models\Cart\models\CartPropertyViewModel;
 use App\Models\Cart\models\CartViewModel;
 use App\Models\Order\Order;
+use App\Models\Settings;
 use App\Repositories\Cart\CartRepository;
 use App\Repositories\Food\FoodReadRepository;
 use App\Services\Cart\CartService;
+use Hamcrest\Core\Set;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 
@@ -43,14 +45,14 @@ class CartController extends Controller
     {
         $this->cartService->save($request);
 
-//        $recomends = $this->foodReadRepository->getRecomendsFromFoodPropertyId($request->post('foodPropertyId'));
-//
-//        $html = view('cart.api.recomend', [
-//            'recomend' => $recomends
-//        ])->render();
+        $recomends = $this->foodReadRepository->getRecomendsFromFoodPropertyId($request->post('foodPropertyId'));
+
+        $html = view('cart.api.recomend', [
+            'recomend' => $recomends
+        ])->render();
 
 
-//        return $html;
+        return $html;
     }
 
     /**
@@ -60,8 +62,7 @@ class CartController extends Controller
      */
     public function show()
     {
-        $cartModel = new CartViewModel($this->cartRepository->getCart(), $this->cartRepository);
-        return response()->json(['cart' => $cartModel]);
+        return response()->json(['cart' => $this->cartRepository->getCart()]);
     }
 
     /**
@@ -69,11 +70,35 @@ class CartController extends Controller
      */
     public function cart(Request $request)
     {
+        $settings = new Settings();
+        $isOrdersOff = $settings::getIsOrdersOff($settings->getActiveSettings());
+        $orderStart  = $settings::getOrdersOpen($settings->getActiveSettings());
+        $orderEnd    = $settings::getOrdersClose($settings->getActiveSettings());
+
+        if ($isOrdersOff && $isOrdersOff->status === Settings::STATUS_ACTIVE) {
+            $request->session()->flash(
+                'message',
+                ['class' => 'alert-danger', 'message' => $isOrdersOff->value ?: 'На данный момент заказы не принимаются!']
+            );
+            return redirect()->route('home');
+        }
+
+        if (date('H:m') > $orderEnd || date('H:m') < $orderStart) {
+            $request->session()->flash(
+                'message',
+                ['class' => 'alert-danger', 'message' => 'В данное время суток заказы не принимаются!']
+            );
+            return redirect()->route('home');
+        }
+
+
         $cart = $this->cartRepository->getCart();
 
         if (null === $cart) {
-            $request->session()->flash('message',
-                ['class' => 'alert-danger', 'message' => 'Добавьте товары в корзину!']);
+            $request->session()->flash(
+                'message',
+                ['class' => 'alert-danger', 'message' => 'Добавьте товары в корзину!']
+            );
             return redirect()->route('home');
         }
         $model = new CartViewModel($cart, $this->cartRepository);
@@ -105,10 +130,13 @@ class CartController extends Controller
 
     public function updateProperty(Request $request)
     {
+
         $quantitiesInfo = $request->post('quantitiesInfo') ?? [];
         foreach ($quantitiesInfo as $quantityInfo) {
-            $this->cartRepository->updateProperty($quantityInfo['id'],
-                [CartProperty::ATTR_QUANTITY => $quantityInfo['quantity']]);
+            $this->cartRepository->updateProperty(
+                $quantityInfo['id'],
+                [CartProperty::ATTR_QUANTITY => $quantityInfo['quantity']]
+            );
         }
 
     }
@@ -125,8 +153,10 @@ class CartController extends Controller
     {
         $message = $this->cartService->activateCoupon($request);
 
-        $request->session()->flash('message',
-            ['class' => 'alert-info', 'message' => $message['message']]);
+        $request->session()->flash(
+            'message',
+            ['class' => 'alert-info', 'message' => $message['message']]
+        );
 
 
         return redirect()->route('cart');

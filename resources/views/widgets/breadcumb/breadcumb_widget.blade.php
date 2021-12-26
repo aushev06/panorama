@@ -1,6 +1,6 @@
 <?php
 /**
- * @var \App\Widgets\Breadcumb\models\Breadcumb[] $items
+ * @var \App\Widgets\Breadcumb\models\Breadcrumb[] $items
  */
 ?>
 

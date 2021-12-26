@@ -14,10 +14,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string $img
  * @property string $icon
  * @property string $description
+ * @property int $oder
+ * @property int $status
  * @property string $slug
  * @property integer $parent_id
- * @property integer $order
- * @property integer $status
  * @property integer $created_at
  * @property integer $updated_at
  */
@@ -39,22 +39,11 @@ class Category extends Model
     const ATTR_UPDATED_AT  = 'updated_at';
 
     const TABLE_NAME = 'categories';
-    protected $table = self::TABLE_NAME;
 
-    protected $fillable = [
-        self::ATTR_NAME,
-        self::ATTR_DESCRIPTION,
-        self::ATTR_IMG,
-        self::ATTR_ICON,
-        self::ATTR_ORDER,
-        self::ATTR_STATUS,
-        self::ATTR_PARENT_ID,
-    ];
+    const STATUS_ACTIVE   = 1;
+    const STATUS_INACTIVE = 0;
 
-    protected $with = [
-        'childCategories',
-        'foods'
-    ];
+    protected $fillable = [self::ATTR_NAME, self::ATTR_DESCRIPTION, self::ATTR_IMG, self::ATTR_ICON, self::ATTR_STATUS];
 
     /**
      * Return the sluggable configuration array for this model.
@@ -79,26 +68,29 @@ class Category extends Model
 
     public function getIconAttribute($value)
     {
-        return $value ? url('storage/' . $value) : null;
+        return url('storage/' . $value);
     }
 
-    public function parentCategory()
-    {
-        return $this->belongsTo(static::class, 'parent_id');
-    }
-
-    public function childCategories()
-    {
-        return $this->hasMany(static::class, 'parent_id');
-    }
 
     public function foods()
     {
-        return $this->hasMany(Food::class)->where(Food::ATTR_STATUS, 1);
+        return $this->hasMany(Food::class);
     }
 
     public function scopeFilter($builder, $filters)
     {
         return $filters->apply($builder);
     }
+
+    /**
+     * @return array
+     */
+    public static function getStatusVariants()
+    {
+        return [
+            static::STATUS_ACTIVE   => 'Активно',
+            static::STATUS_INACTIVE => 'Выключено'
+        ];
+    }
+
 }

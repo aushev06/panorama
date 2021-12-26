@@ -54,13 +54,14 @@ use App\Models\Food\models\FoodViewModel;
                         {{--<button class="add-to-wishlist round-icon-btn"><i--}}
                         {{--class="icon_heart_alt"></i></button>--}}
                         @if(true === $food->active)
-                            <button data-food-property-id="{{$food->properties[0]->id}}"
-                                    class="add-to-cart round-icon-btn">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
                             <button class="quickview view round-icon-btn" data-id="{{$food->id}}"><i
                                     class="far fa-eye"></i>
                             </button>
+                            <button data-food-property-id="{{$food->properties[0]->id}}"
+                                    class="add-to-cart round-icon-btn" style="width: 120px !important;background-color: lightgreen !important;">
+                                <i class="fas fa-cart-plus"></i> Добавить
+                            </button>
+
                         @endif
                     </div>
                     <div class="product-select_list">

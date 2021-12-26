@@ -16,7 +16,7 @@ class CategoryService
     public function save(CategoryRequest $request): Category
     {
         $category = new Category();
-        $category->fill($request->all(['name', 'description', 'parent_id', 'status']));
+        $category->fill($request->all(['name', 'description', 'status']));
 
         if ($request->file('img')) {
             $category->img = $request->file('img')->store('categories', 'public');
@@ -43,10 +43,8 @@ class CategoryService
         $category->fill($request->all([
             Category::ATTR_NAME,
             Category::ATTR_DESCRIPTION,
-            Category::ATTR_PARENT_ID,
-            Category::ATTR_STATUS,
+            Category::ATTR_STATUS
         ]));
-
 
         if ($request->file('img')) {
             $category->img = $request->file('img')->store('categories', 'public');

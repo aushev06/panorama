@@ -17,7 +17,7 @@ class CartViewModel
     const ATTR_ID = 'id';
 
     /**
-     * @var double $total
+     * @var integer $total
      */
     public $total;
     const ATTR_TOTAL = 'total';
@@ -25,7 +25,7 @@ class CartViewModel
     /**
      * @var CartProperty[] $cartProperties
      */
-    public $cartProperties = [];
+    public $cartProperties;
 
 
     public function __construct(Cart $cart, CartRepository $cartRepository)

@@ -2,6 +2,7 @@
 
 namespace App\Widgets\Category;
 
+use App\Models\Category\Category;
 use App\Repositories\Category\CategoryRepository;
 use Arrilot\Widgets\AbstractWidget;
 

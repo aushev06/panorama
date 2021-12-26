@@ -2,12 +2,13 @@
 
 namespace App\Observers;
 
+use App\Jobs\OrderSendToTelegramJob;
 use App\Models\Order\Order;
 use App\Repositories\Order\OrderRepository;
 use App\Services\Telegram\TelegramService;
+use App\Services\Tillypad\TillypadService;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Mail;
 
 class OrderObserver
 {
@@ -15,16 +16,22 @@ class OrderObserver
      * @var OrderRepository
      */
     private $orderRepository;
-
+    /**
+     * @var TillypadService
+     */
     private $tillypadService;
     /**
      * @var TelegramService
      */
     private $telegramService;
 
-    public function __construct(OrderRepository $orderRepository, TelegramService $telegramService)
-    {
+    public function __construct(
+        OrderRepository $orderRepository,
+        TillypadService $tillypadService,
+        TelegramService $telegramService
+    ) {
         $this->orderRepository = $orderRepository;
+        $this->tillypadService = $tillypadService;
         $this->telegramService = $telegramService;
     }
 
@@ -36,9 +43,13 @@ class OrderObserver
      */
     public function created(Order $order)
     {
-        $properties = $this->orderRepository->getOrderProperties($order->cart_id)->toArray();
-        $this->telegramService->sendToTelegram($order, $properties);
-        session()->regenerate();
+        if ($order::TYPE_CASH === (int)$order->pay_type) {
+//            $properties = $this->orderRepository->getOrderProperties($order->cart_id)->toArray();
+            OrderSendToTelegramJob::dispatch($this->telegramService, $order);
+
+//            $this->tillypadService->sendingOrderToTillypad($order, $properties);
+            session()->regenerate();
+        }
     }
 
     /**
@@ -49,10 +60,11 @@ class OrderObserver
      */
     public function updated(Order $order)
     {
-        if ($order::STATUS_PAID === (int)$order->status) {
-            $properties = $this->orderRepository->getOrderProperties($order->cart_id)->toArray();
+        if ($order::STATUS_PAID === $order->status) {
+            OrderSendToTelegramJob::dispatch($this->telegramService, $order);
+//            $properties = $this->orderRepository->getOrderProperties($order->cart_id)->toArray();
+            Log::info("Данные", [$order->id, $order->cart_id]);
 //            $this->tillypadService->sendingOrderToTillypad($order, $properties);
-            $this->telegramService->sendToTelegram($order, $properties);
         }
     }
 

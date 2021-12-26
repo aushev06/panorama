@@ -19,7 +19,6 @@ class IngridientFoods extends Model
     const ATTR_STATUS        = 'status';
 
     const TABLE_NAME = 'ingridient_foods';
-    protected $table = self::TABLE_NAME;
 
     const STATUS_ACTIVE   = 1;
     const STATUS_INACTIVE = 0;

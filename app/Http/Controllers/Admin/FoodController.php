@@ -8,7 +8,6 @@ use App\Models\Category\Category;
 use App\Models\Food\Food;
 use App\Models\Food\FoodProperty;
 use App\Models\Food\models\FoodViewModel;
-use App\Models\Option\Option;
 use App\Models\RecomendFood\RecomendFood;
 use App\Repositories\Category\CategoryRepository;
 use App\Repositories\Food\FoodReadRepository;
@@ -84,30 +83,21 @@ class FoodController extends Controller
         $categories = Category::get();
         $variants   = Food::getStatusVariants();
 
-        $foods   = Food::get()->map(function (Food $food) {
+        $foods = Food::get()->map(function (Food $food) {
             return [
                 'id'     => $food->id,
                 'name'   => $food->name,
                 'select' => false
             ];
         });
-        $options = Option::where(Option::ATTR_STATUS, Option::STATUS_ACTIVE)->get()->keyBy('id')->map(function (
-            Option $option
-        ) {
-            return [
-                'id'     => $option->id,
-                'name'   => $option->name,
-                'select' => false
-            ];
-        });
 
-        return view('admin.food.create', compact('categories', 'variants', 'foods', 'options'));
+        return view('admin.food.create', compact('categories', 'variants', 'foods'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(FoodRequest $request)
@@ -120,7 +110,7 @@ class FoodController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param int $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -136,7 +126,7 @@ class FoodController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -144,8 +134,7 @@ class FoodController extends Controller
         /**
          * @var Food $food
          */
-        $food          = $this->model::with('options')->findOrFail($id);
-        $foodOptions   = $food->options->keyBy('id');
+        $food          = $this->model->findOrFail($id);
         $model         = new FoodViewModel($food);
         $categories    = Category::get();
         $variants      = Food::getStatusVariants();
@@ -160,31 +149,22 @@ class FoodController extends Controller
                 ])->first() ? true : false
             ];
         });
-        $options       = Option::where(Option::ATTR_STATUS, Option::STATUS_ACTIVE)->get()->keyBy('id')->map(function (
-            Option $option
-        ) use ($foodOptions) {
-            return [
-                'id'     => $option->id,
-                'name'   => $option->name,
-                'select' => isset($foodOptions[$option->id]) ? true : false,
-            ];
-        });
+
 
         return view('admin.food.edit', [
             'model'          => $food,
             'categories'     => $categories,
             'variants'       => $variants,
             'foodProperties' => $foodPropeties,
-            'foods'          => $foods,
-            'options'        => $options,
+            'foods'          => $foods
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param FoodRequest $request
-     * @param int $id
+     * @param  FoodRequest $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(FoodRequest $request, $id)
@@ -197,12 +177,14 @@ class FoodController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Food $food)
+    public function destroy($id)
     {
-        if (!$food->delete()) {
+        $model = $this->model->findOrFail($id);
+
+        if (!$model->delete()) {
             throw new \Exception("Не удалось удалить!");
         }
 

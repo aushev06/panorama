@@ -34,12 +34,11 @@ class FoodRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'                      => 'required',
-            'category_id'               => 'required|integer',
-            'FoodProperty'              => 'required',
-            'FoodProperty.*.price'      => 'required',
+            'name'                 => 'required',
+            'category_id'          => 'required|integer',
+            'FoodProperty'         => 'required',
+            'FoodProperty.*.price' => 'required',
             'FoodProperty.*.is_visible' => 'required|integer',
-            'FoodProperty.*.name'       => 'required|string',
         ];
     }
 }

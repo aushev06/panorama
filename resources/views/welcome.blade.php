@@ -1,45 +1,99 @@
 <!doctype html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>IngVine Food - Доставка вкусной еды, доставка в Ингушетии</title>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="description" content="Заказать еду на дом в Ингушетии. IngVine Food - быстрая доставка вкусной еды. Тел: +79280974112" />
-    <meta name="keywords" content="ингушетия, доставка,ингушетия доставка,IngVine Food доставка еды,доставка еды ингушетия,доставка еды назрань,быстрая доставка,еда ингушетия,еда назрань,доставка назрань,доставка магас, где заказать еду, доставка еды в ингушетии, доставка еды на дом, доставка еды саки крым, доставка еды ингушетия, еда с доставкой, еда с доставкой на дом, заказать доставку еды, заказать еду, каталог доставок еды, заказать салат, доставка салатов, горячие блюда доставка, горячие блюда на дом, заказать горячие блюда на дом, гарниры на дом, доставка гарниров, заказать картофель фри, доставка пиццы, доставка пиццы на дом, доставка суши, доставка на дом, заказать пиццу с доставкой, пицца на дом, пицца доставка, доставка напитков, где заказать завтрак на дом, готовые завтраки с доставкой, завтрак с доставкой, завтрак с доставкой на дом, суп на дом, доставка супов, готовые закуски, доставка закусок, закуски на день рождения доставка, горячие закуски, горячие закуски на дом, детское меню с доставкой, детское меню заказать, доставка соков, роллы доставка, роллы цена, саки роллы доставка" />
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+        <title>Laravel</title>
 
-    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
+        <!-- Styles -->
+        <style>
+            html, body {
+                background-color: #fff;
+                color: #636b6f;
+                font-family: 'Nunito', sans-serif;
+                font-weight: 200;
+                height: 100vh;
+                margin: 0;
+            }
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            .full-height {
+                height: 100vh;
+            }
 
-    <link rel="stylesheet" href="{{asset('css/materialize.min.css')}}">
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript" >
-        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+            .flex-center {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
 
-        ym(67506667, "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true
-        });
-    </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/67506667" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
-</head>
-<body>
-<div id="root"></div>
-<script>
-    window.user = @json(auth()->user() ?? null)
-</script>
-<script src="{{asset('js/materialize.min.js')}}"></script>
-<script src="{{asset('spa/js/lazyload.js')}}"></script>
-<script src="{{asset('spa/js/main.js')}}"></script>
-<script src="{{asset('js/index.js')}}"></script>
-</body>
+            .position-ref {
+                position: relative;
+            }
+
+            .top-right {
+                position: absolute;
+                right: 10px;
+                top: 18px;
+            }
+
+            .content {
+                text-align: center;
+            }
+
+            .title {
+                font-size: 84px;
+            }
+
+            .links > a {
+                color: #636b6f;
+                padding: 0 25px;
+                font-size: 13px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+
+            .m-b-md {
+                margin-bottom: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="flex-center position-ref full-height">
+            @if (Route::has('login'))
+                <div class="top-right links">
+                    @auth
+                        <a href="{{ url('/home') }}">Home</a>
+                    @else
+                        <a href="{{ route('login') }}">Login</a>
+
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}">Register</a>
+                        @endif
+                    @endauth
+                </div>
+            @endif
+
+            <div class="content">
+                <div class="title m-b-md">
+                    Laravel
+                </div>
+
+                <div class="links">
+                    <a href="https://laravel.com/docs">Docs</a>
+                    <a href="https://laracasts.com">Laracasts</a>
+                    <a href="https://laravel-news.com">News</a>
+                    <a href="https://blog.laravel.com">Blog</a>
+                    <a href="https://nova.laravel.com">Nova</a>
+                    <a href="https://forge.laravel.com">Forge</a>
+                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>

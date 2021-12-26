@@ -68,7 +68,7 @@
                             <tr>
                                 <th class="product-iamge" scope="col">Фото</th>
                                 <th class="product-name"  scope="col">Название</th>
-{{--                                <th class="product-price" scope="col">Цена</th>--}}
+                                {{--                                <th class="product-price" scope="col">Цена</th>--}}
                                 <th class="product-quantity"  scope="col">Кол-во</th>
                                 <th class="product-total"  scope="col">Сумма</th>
                                 <th class="product-clear" scope="col">
@@ -93,19 +93,19 @@
 
                     <div class="coupon">
                         @if(Session::has('message'))
-                            <div class="alert {{Session::get('message')['class']}}">
+                <div class="alert {{Session::get('message')['class']}}">
                                 {{Session::get('message')['message']}}
-                            </div>
-                        @endif
-                        <form action="{{route('cart.activate-coupon')}}" method="post">
-                            @csrf
-                            <input class="no-round-input" name="coupon" type="text" placeholder="ВАШ купон">
-                            <button class="no-round-btn smooth">Активировать купон</button>
-                        </form>
                     </div>
+@endif
+                <form action="{{route('cart.activate-coupon')}}" method="post">
+                            @csrf
+                <input class="no-round-input" name="coupon" type="text" placeholder="ВАШ купон">
+                <button class="no-round-btn smooth">Активировать купон</button>
+            </form>
+        </div>
 
-                </div>
-                -->
+    </div>
+-->
             </div>
             <div class="row align-items-center justify-content-end" style="margin-top: -45px;">
                 <div class="col-12 col-md-6 col-lg-4">
@@ -124,8 +124,10 @@
                             </tbody>
                         </table>
                         <div class="checkout-method">
+                            {{--Заменить href у "checkout", для работы карзины--}}
                             <a href="{{route('checkout')}}" class="checkout">
-                                <button class="normal-btn"> Оформить заказ</button>
+                                {{--                            <a href="#" class="checkout">--}}
+                                <button class="normal-btn" id="cart-order-btn"> Оформить заказ</button>
                             </a>
                         </div>
                     </div>
@@ -133,5 +135,15 @@
             </div>
         </div>
     </div>
+
+    {{--    <!--Stop Order-->--}}
+    {{--    <script>--}}
+    {{--        document.getElementById('cart-order-btn').onclick = (e) => {--}}
+    {{--            e.stopPropagation();--}}
+    {{--            e.preventDefault();--}}
+    {{--            alert('С 25.10 - 26.10 не работаем!');--}}
+    {{--        }--}}
+    {{--    </script>--}}
+    {{--    <!--End Stop Order-->--}}
 
 @endsection

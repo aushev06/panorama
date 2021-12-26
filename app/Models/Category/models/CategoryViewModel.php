@@ -39,11 +39,6 @@ class CategoryViewModel
      */
     public $slug;
 
-    /**
-     * @var integer $parent_id
-     */
-    public $parent_id;
-
 
     /**
      * @var integer
@@ -52,30 +47,19 @@ class CategoryViewModel
     /**
      * @var FoodViewModel[]
      */
-    public $foodProperties;
-    /**
-     * @var self
-     */
-    public $child;
+    public $foodProperties = [];
 
     public function __construct(Category $model)
     {
-        $this->id        = $model->id;
-        $this->icon      = $model->icon;
-        $this->img       = $model->img;
-        $this->name      = $model->name;
-        $this->slug      = $model->slug;
-        $this->count     = $model->foods()->count();
-        $this->status    = $model->status;
-        $this->parent_id = $model->parent_id;
+        $this->id    = $model->id;
+        $this->icon  = $model->icon;
+        $this->img   = $model->img;
+        $this->name  = $model->name;
+        $this->slug  = $model->slug;
+        $this->count = $model->foods()->count();
 
-        foreach ($model->childCategories as $category) {
-            $child[] = new CategoryViewModel($category);
-        }
 
-        $this->child = $child ?? [];
-
-        foreach ($model->foods()->get() as $food) {
+        foreach ($model->foods as $food) {
             $this->foodProperties[] = new FoodViewModel($food);
         }
 

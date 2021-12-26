@@ -94,8 +94,4 @@
         placeholder: 'Выберите блюда'
     });
 
-    $('select.options').select2({
-        placeholder: 'Выберите опции'
-    });
-
 })(jQuery); // End of use strict

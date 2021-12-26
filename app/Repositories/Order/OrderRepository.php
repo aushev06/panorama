@@ -33,7 +33,7 @@ class OrderRepository
     public function store(array $attributes = [])
     {
         $this->order->fill($attributes);
-        $this->order->status =Order::STATUS_NO_PAID;
+        $this->order->status = $this->order::STATUS_NO_PAID;
 
         $this->order->date_delivery = $this->order->date_delivery ?: date("Y-m-d");
         $this->order->time_delivery = $this->order->time_delivery ?: Carbon::now()->toTimeString();

@@ -12,7 +12,7 @@ use App\Http\Controllers\Admin\OrderController as Controller;
 @section('content')
     <div class="content-wrapper">
         <div class="container-fluid">
-            <!-- Breadcumbs-->
+            <!-- Breadcrumbs-->
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="{{route(Controller::ROUTE_INDEX)}}">{{Controller::TITLE}}</a>
@@ -46,23 +46,10 @@ use App\Http\Controllers\Admin\OrderController as Controller;
                         <table class="table table-striped table-bordered detail-view">
                             @foreach($model->attributes() as $attribute => $value)
                                 <tr>
-                                    <th>{{$attribute === $model::ATTR_DELIVERY_COST ? $value . ': "' . $model->city . '"' : $value }}</th>
-                                    <td>
-                                        @if($attribute === $model::ATTR_CITY)
-                                            {{$model->city ? $model->$attribute : 'Пользователь не выбрал район'}}
-                                        @elseif($attribute === $model::ATTR_PHONE)
-                                            {{$model->phone}}
-{{--                                            <a href="tel:+{{$model->phone}}">+{{$model->phone}}</a>--}}
-                                        @else
-                                            {{$model->$attribute}}
-                                        @endif
-                                    </td>
+                                    <th>{{$value}}</th>
+                                    <td>{{$model->$attribute}}</td>
                                 </tr>
                             @endforeach
-                                <tr>
-                                    <th>Общая стоимость</th>
-                                    <td><b>{{$model->total + $model->delivery_cost}}</b></td>
-                                </tr>
                         </table>
                     </div>
                 </div>
@@ -86,14 +73,10 @@ use App\Http\Controllers\Admin\OrderController as Controller;
                             <td>{{$property->sum}}</td>
                         </tr>
                     @endforeach
-                    <tr class="text-center">
-                        <td></td>
-                        <td></td>
-                        <td class="text-right">Итого: </td>
-                        <td><b><?= collect($model->foodProperties)->sum('sum') ?></b></td>
-                    </tr>
                     </tbody>
                 </table>
+
+
             </div>
 
         </div>

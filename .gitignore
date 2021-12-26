@@ -4,7 +4,6 @@
 /storage/*.key
 /vendor
 .env
-.env.backup
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
@@ -12,8 +11,5 @@ npm-debug.log
 yarn-error.log
 .idea/workspace.xml
 *.xml
-*.iml
-*.iml
-*.xml
-/resources/spa/src/pages/PromotionsPage/data.js
-.idea
+.idea/jroo.iml
+.idea/*

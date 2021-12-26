@@ -41,7 +41,7 @@ class CartRepository
         $model          = new $this->cartModel;
         $model->session = $session;
         $model->user_id = $user_id;
-        $model->total   = $total ?? 0;
+        $model->total   = $total;
 
         $model->save();
 
@@ -50,34 +50,42 @@ class CartRepository
 
     }
 
-    /**
-     * @param int $cartId
-     * @param int $foodPropertyId
-     * @param float $price
-     * @param int $quantity
-     * @param array $body
-     * @return CartProperty
-     *
-     * @author Aushev Ibra <aushevibra@yandex.ru>
-     */
-    public function setProperty(
-        CartProperty $cartProperty,
-        float $price,
-        int $quantity
-    ): CartProperty {
+    public function setProperty(int $cartId, int $foodPropertyId, float $price, int $quantity): CartProperty
+    {
+        /**
+         * @var CartProperty $cartProperty
+         */
+        $cartProperty = $this->cartPropertyModel::where([
+            [$this->cartPropertyModel::ATTR_CART_ID, $cartId],
+            [$this->cartPropertyModel::ATTR_FOOD_PROPERTY_ID, $foodPropertyId],
+        ])->first();
 
+        if (null !== $cartProperty) {
+            $cartProperty->quantity += $quantity;
+            $cartProperty->price    = $price;
+            $cartProperty->save();
+            $this->updateTotal($cartId);
 
-        $cartProperty->quantity += $quantity;
-        $cartProperty->price    = $price;
+            return $cartProperty;
+
+        }
+
+        $cartProperty                   = new $this->cartPropertyModel;
+        $cartProperty->cart_id          = $cartId;
+        $cartProperty->food_property_id = $foodPropertyId;
+        $cartProperty->quantity         = $quantity;
+        $cartProperty->price            = $price;
+
         $cartProperty->save();
 
+
         // ==== обновление общей суммы корзины
-        $this->updateTotal($cartProperty->cart_id);
+        $this->updateTotal($cartId);
 
         return $cartProperty;
     }
 
-    public function updateTotal($cartID)
+    private function updateTotal($cartID)
     {
         $total = 0;
         /**
@@ -86,22 +94,12 @@ class CartRepository
 
         $cart = Cart::findOrFail($cartID);
 
-        /**
-         * @var CartProperty[] $cartProps
-         */
-        $cartProps = CartProperty::where(CartProperty::ATTR_CART_ID, $cartID)->get();
+        $cartProps = CartProperty::where(CartProperty::ATTR_CART_ID, $cartID)->get()->toArray();
 
         foreach ($cartProps as $cartProp) {
-            $total += $cartProp->price * $cartProp->quantity;
-
-            $options = $cartProp->options()->get();
-
-            foreach ($options as $option) {
-                $total += ($option->pivot->quantity * $option->pivot->price) * $cartProp->quantity;
-            }
-
+            $total += $cartProp['price'] * $cartProp['quantity'];
         }
-        $cart->total = $total;
+        $cart->total = round($total, 2);
         $cart->save();
 
     }
@@ -120,32 +118,21 @@ class CartRepository
             [Cart::ATTR_STATUS, Cart::STATUS_ACTIVE]
         ])->first();
 
-        if (null === $cart) {
-            $cart = $this->store($session, 0);
-        }
-
         return $cart;
     }
 
     public function getPropertiesCart(int $cartID)
     {
-        $props = CartProperty::query()
-            ->with([CartProperty::WITH_OPTIONS])
-            ->select([
-                CartProperty::TABLE_NAME . '.' . CartProperty::ATTR_ID . ' as cart_property_id',
-                CartProperty::TABLE_NAME . '.' . CartProperty::ATTR_ID . ' as id',
-                CartProperty::TABLE_NAME . '.' . CartProperty::ATTR_CART_ID . ' as cart_id',
-                CartProperty::TABLE_NAME . '.' . CartProperty::ATTR_QUANTITY,
-                CartProperty::TABLE_NAME . '.' . CartProperty::ATTR_PRICE,
-                CartProperty::TABLE_NAME . '.' . CartProperty::ATTR_FOOD_PROPERTY_ID,
-                DB::raw(CartProperty::TABLE_NAME . '.' . CartProperty::ATTR_PRICE . '*' . CartProperty::TABLE_NAME . '.' . CartProperty::ATTR_QUANTITY . ' as total_sum'),
-                Food::TABLE_NAME . '.' . Food::ATTR_IMG . ' AS mainIMG',
-                FoodProperty::TABLE_NAME . '.' . FoodProperty::ATTR_IMG,
-                Food::TABLE_NAME . '.' . Food::ATTR_NAME . " as name",
-                FoodProperty::TABLE_NAME . '.' . FoodProperty::ATTR_NAME . " as cart_property_name",
-                Food::TABLE_NAME . '.' . Food::ATTR_MITM_ID,
-                Food::TABLE_NAME . '.' . Food::ATTR_ID . ' as food_id',
-            ])
+        $props = CartProperty::select([
+            CartProperty::TABLE_NAME . '.' . CartProperty::ATTR_ID . ' as cart_property_id',
+            CartProperty::TABLE_NAME . '.' . CartProperty::ATTR_CART_ID . ' as cart_id',
+            CartProperty::TABLE_NAME . '.' . CartProperty::ATTR_QUANTITY,
+            CartProperty::TABLE_NAME . '.' . CartProperty::ATTR_PRICE,
+            DB::raw(CartProperty::TABLE_NAME . '.' . CartProperty::ATTR_PRICE . '*' . CartProperty::TABLE_NAME . '.' . CartProperty::ATTR_QUANTITY . ' as total_sum'),
+            Food::TABLE_NAME . '.' . Food::ATTR_IMG,
+            Food::TABLE_NAME . '.' . Food::ATTR_NAME,
+            Food::TABLE_NAME . '.' . Food::ATTR_MITM_ID,
+        ])
             ->join(FoodProperty::TABLE_NAME, FoodProperty::TABLE_NAME . '.' . FoodProperty::ATTR_ID, '=',
                 CartProperty::TABLE_NAME . '.' . CartProperty::ATTR_FOOD_PROPERTY_ID)
             ->join(Food::TABLE_NAME, Food::TABLE_NAME . '.' . Food::ATTR_ID, '=',
@@ -185,51 +172,10 @@ class CartRepository
 
     public function updateProperty($id, array $attributes = [])
     {
-        /**
-         * @var CartProperty $model
-         */
         $model = CartProperty::findOrFail($id);
         $model->fill($attributes);
-
-        if (0 === $model->quantity) {
-            $model->delete();
-        } else {
-            $model->save();
-        }
-
+        $model->save();
 
         $this->updateTotal($model->cart_id);
-    }
-
-
-    /**
-     * @param $cartId
-     * @param $foodPropertyId
-     * @return CartProperty
-     *
-     * @author Aushev Ibra <aushevibra@yandex.ru>
-     */
-    public function getProperty($cartId, $foodPropertyId): CartProperty
-    {
-        /**
-         * @var CartProperty $cartProperty
-         */
-
-        $cartProperty = $this->cartPropertyModel::where([
-            [$this->cartPropertyModel::ATTR_CART_ID, $cartId],
-            [$this->cartPropertyModel::ATTR_FOOD_PROPERTY_ID, $foodPropertyId],
-        ])->orderByDesc('id')->first();
-
-        if ($cartProperty) {
-            return $cartProperty;
-        }
-
-        $cartProperty = new CartProperty();
-
-        $cartProperty->cart_id          = $cartId;
-        $cartProperty->food_property_id = $foodPropertyId;
-
-        return $cartProperty;
-
     }
 }

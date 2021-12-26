@@ -2,7 +2,6 @@
 
 namespace App\Models\Order;
 
-use App\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -21,27 +20,23 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string $organization
  * @property integer $pay_type
  * @property integer $user_id
- * @property double $total
+ * @property integer $total
  * @property string $comment
  * @property integer $status
  * @property integer $delivery_type
- * @property string $city
+ * @property string city
  * @property string $street
  * @property integer $house
  * @property integer $apartment
  * @property integer $entrance
  * @property integer $intercom
  * @property integer $building
- * @property double $delivery_cost
- *
- * @property-read User $user
  */
 class Order extends Model
 {
     use SoftDeletes;
 
     const TABLE_NAME = 'orders';
-    protected $table = self::TABLE_NAME;
 
     const ATTR_ID            = 'id';
     const ATTR_CART_ID       = 'cart_id';
@@ -67,7 +62,6 @@ class Order extends Model
     const ATTR_ENTRANCE      = 'entrance';
     const ATTR_INTERCOM      = 'intercom';
     const ATTR_BUILDING      = 'building';
-    const ATTR_DELIVERY_COST = 'delivery_cost';
 
     const STATUS_NO_PAID = 0;
     const STATUS_PAID    = 1;
@@ -78,8 +72,6 @@ class Order extends Model
 
     const DELIVERY_TYPE_PICKUP  = 1;
     const DELIVERY_TYPE_COURIER = 2;
-
-    const WITH_USER = 'user';
 
     protected $fillable = [
         self::ATTR_ID,
@@ -106,11 +98,8 @@ class Order extends Model
         self::ATTR_ENTRANCE,
         self::ATTR_INTERCOM,
         self::ATTR_BUILDING,
-        self::ATTR_USER_ID,
-        self::ATTR_DELIVERY_COST,
     ];
 
-    protected $with = [self::WITH_USER];
 
     public function scopeFilter($builder, $filters)
     {
@@ -130,7 +119,7 @@ class Order extends Model
     {
         return [
             static::TYPE_CASH   => 'Наличными',
-            static::TYPE_ONLINE => 'Картой',
+            static::TYPE_ONLINE => 'Онлайн',
         ];
     }
 
@@ -145,11 +134,6 @@ class Order extends Model
     public function getFullAddressAttribute($value)
     {
         return implode(',', [$this->address]);
-    }
-
-    public function user()
-    {
-        return $this->belongsTo(User::class);
     }
 
 }

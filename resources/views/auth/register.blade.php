@@ -8,9 +8,9 @@
     }}
     <div class="account">
         <div class="container">
-            <div class="row justify-content-center m-5">
+            <div class="row justify-content-center">
                 <div class="col-12 col-md-6 mx-auto">
-                    <h3 class="title text-center m-2" style="font-size: 24px">Регистрация личного кабинета</h3>
+                    <h1 class="title">Регистрация личного кабинета</h1>
 
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
@@ -101,6 +101,8 @@
                             </div>
                         </div>
                     </form>
+
+                    {!!  GoogleReCaptchaV3::render(['register'=>'register']) !!}
                 </div>
             </div>
         </div>

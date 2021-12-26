@@ -16,7 +16,6 @@ use Illuminate\Database\Eloquent\Model;
 class FoodInfo extends Model
 {
     const TABLE_NAME = 'food_info';
-    protected $table = self::TABLE_NAME;
 
     const ATTR_ID           = 'id';
     const ATTR_FOOD_ID      = 'food_id';
@@ -26,6 +25,7 @@ class FoodInfo extends Model
     const ATTR_PROTEIN      = 'protein';
     const ATTR_CALORIES     = 'calories';
 
+    protected $table      = self::TABLE_NAME;
     protected $primaryKey = self::ATTR_FOOD_ID;
 
     protected $fillable = [
