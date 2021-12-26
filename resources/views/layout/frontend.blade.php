@@ -15,7 +15,7 @@ $weekendEnd    = $settings->getWeekendClose($activeSettings);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
     <link rel="stylesheet" href="{{mix('frontend/css/all.css')}}">
-    <link rel="shortcut icon" href="{{asset('frontend/images/JBS_Logo.png')}}">
+    <link rel="shortcut icon" href="{{asset('frontend/images/logo3.png')}}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 
@@ -29,7 +29,7 @@ $weekendEnd    = $settings->getWeekendClose($activeSettings);
                     {{--<div class="modal-header" style="background: #2C150C;">--}}
                     {{--</div>--}}
                     {{--<div class="modal-body text-center">--}}
-                        {{--<img src="{{asset('frontend/images/JBS_Logo.png')}}" alt="Доставка вкусных бургеров JROO"  title="Доставка вкусных бургеров JROO" style="width: 18em; margin-right: 20px;">--}}
+                        {{--<img src="{{asset('frontend/images/logo3.png')}}" alt="Доставка вкусных бургеров JROO"  title="Доставка вкусных бургеров JROO" style="width: 18em; margin-right: 20px;">--}}
                         {{--<h3 style="font-weight: bold; font-size: 25pt;">Мы на карантине!</h3>--}}
                         {{--<h4 style="font-weight: bold; color:#F8AE33; font-size: 20pt;">--}}
                             {{--Следите за нами в социальных сетях по хэштегу <a href="https://www.instagram.com/jroo_burger_steak/" target="_blank" style="color: #2C150C;">#jrooyalta</a> и узнаете первыми!</h4>--}}
@@ -242,15 +242,15 @@ $weekendEnd    = $settings->getWeekendClose($activeSettings);
                                     <a href="https://yandex.ru/maps/-/CGsruQ9e">
                                         <p class="d-flex align-items-center">
                                             <i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i>
-                                            Крым,
-                                            г. Ялта, ул.
-                                            Игнатенко дом 3
+                                            г. Магас
+                                            Проспект Зязикова,
+                                            2A На крыше бизнес-отеля Магас
                                         </p>
                                     </a>
                                     <a href="">
                                         <p class="d-flex align-items-center">
                                             <i class="fas fa-phone" style="margin-right: 10px;"></i><a
-                                                href="tel:+79780873337" style="color: #0b0b0b"> +7 (978) 087-33-37</a>
+                                                href="tel:+79287328477" style="color: #0b0b0b"> +7 (928) 732-84-77</a>
                                         </p>
                                     </a>
                                     <a href="">
@@ -269,7 +269,7 @@ $weekendEnd    = $settings->getWeekendClose($activeSettings);
                     </div>
                     <div class="col-6">
                         <div class="mobile-menu_logo text-center d-flex justify-content-center align-items-center">
-                            <a href="/"><img src="{{asset('frontend/images/JBS_Logo.png')}}" style="width: 90%"
+                            <a href="/"><img src="{{asset('frontend/images/logo3.png')}}" style="width: 90%"
                                              alt=""></a>
                         </div>
                     </div>
@@ -318,7 +318,7 @@ $weekendEnd    = $settings->getWeekendClose($activeSettings);
     <div class="container">
         <div class="row">
             <div class="col-12 col-sm-12 col-md-6 text-sm-center text-md-left">
-                <div class="footer-logo text-center"><img src="{{asset('frontend/images/JBS_Logo.png')}}" alt=""
+                <div class="footer-logo text-center"><img src="{{asset('frontend/images/logo3.png')}}" alt=""
                                                           style="width: 40%"></div>
                 <div class="footer-contact text-center">
                     <p>Адрес: <a href="https://yandex.ru/maps/-/CGsruQ9e" style="color: #0b0b0b">Крым, г. Ялта, ул. Игнатенко дом 3,</a> </p>

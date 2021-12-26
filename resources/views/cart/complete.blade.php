@@ -62,7 +62,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6 col-lg-4">
-                                    <div class="benefit-detail d-flex flex-column align-items-center"><img class="" src="{{asset('frontend/images/JBS_Logo.png')}}" alt="" style="width: 25%;">
+                                    <div class="benefit-detail d-flex flex-column align-items-center"><img class="" src="{{asset('frontend/images/logo3.png')}}" alt="" style="width: 25%;">
                                         <br>
                                         <h5 class="benefit-title">Основной сайт</h5>
                                         <br>
