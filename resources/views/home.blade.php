@@ -130,7 +130,7 @@
     <div class="deal-of-week">
         <div class="container">
             <div class="col-12 text-center" style="background: linear-gradient(to right,#f6efd2,#cead78); border-radius: 10px; padding: 30px;">
-                <p style="font-size: 1em; color: #2C150C;font-weight: bold; line-height: 30px;">JROO burger & steak включает в себя простоту и локаничность интерьера, безупречный вкус качественных местных продуктов и доступную стоимость блюд.
+                <p style="font-size: 1em; color: #2C150C;font-weight: bold; line-height: 30px;">Панорама включает в себя простоту и локаничность интерьера, безупречный вкус качественных местных продуктов и доступную стоимость блюд.
                     Мы удивим Вас простотой исполнения и в то же время изяществом вкуса сочных стейков, приготовленных из мяса местного производства.</p>
             </div>
         </div>

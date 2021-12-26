@@ -30,7 +30,7 @@
         <div class="full-fluid">
             <div class="container">
                 <div class="delivery-process_wrapper text-center">
-                    <div class="title coffee-underline text-white" style="color: #2C150C !important; margin-bottom: 70px;">Как заказать в JROO</div>
+                    <div class="title coffee-underline text-white" style="color: #2C150C !important; margin-bottom: 70px;">Как заказать в Панорама</div>
                     <div class="delivery-process_block">
                         <div class="row justify-content-between">
                             <div class="col-6 col-md-3">
