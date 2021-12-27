@@ -18,16 +18,16 @@
             <div class="col-12 text-center">
             </div>
         </div>
-        <div class="container">
-            <div class="row justify-content-md-center" style="margin-top: 10px;">
-                <div class="col-12 col-lg-5 text-center" style="margin-top: 10px;">
-                    <span style="font-size: 2.8em; font-weight:bold;">★4,7</span>  <p style="margin-top: 5px;">средняя оценка на основании 524 отзывов</p>
-                </div>
-                <div class="col-12 col-lg-5 text-center" style="margin-top: 10px;">
-                    <span style="font-size: 2.8em;font-weight:bold;">94,8%</span> <p style="margin-top: 5px;">клиентов остались довольными и счастливыми</p>
-                </div>
-            </div>
-        </div>
+{{--        <div class="container">--}}
+{{--            <div class="row justify-content-md-center" style="margin-top: 10px;">--}}
+{{--                <div class="col-12 col-lg-5 text-center" style="margin-top: 10px;">--}}
+{{--                    <span style="font-size: 2.8em; font-weight:bold;">★4,7</span>  <p style="margin-top: 5px;">средняя оценка на основании 524 отзывов</p>--}}
+{{--                </div>--}}
+{{--                <div class="col-12 col-lg-5 text-center" style="margin-top: 10px;">--}}
+{{--                    <span style="font-size: 2.8em;font-weight:bold;">94,8%</span> <p style="margin-top: 5px;">клиентов остались довольными и счастливыми</p>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
     </div>
     {{ Widget::run('breadcumb.breadcumbWidget', ['items' => [
           \App\Widgets\Breadcumb\models\Breadcumb::create('Главная', '/', 'fas fa-home'),

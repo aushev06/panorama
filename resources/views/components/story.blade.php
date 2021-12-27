@@ -32,8 +32,8 @@
                 </div>
             </div>
             <div class="col-12 col-md-12 col-lg-6 order-2 order-md-4 order-lg-3 text-center">
-                <div class="week-product_img"><img class="img-fluid" src="{{asset('frontend/images/flud2.jpeg')}}" alt="">
-                    <p><img src="{{asset('frontend/images/icon-item/logo50.png')}}" alt=""></p>
+                <div class="week-product_img"><img class="img-fluid" src="{{asset('frontend/images/101412612.jpeg')}}" alt="">
+                    <p><img src="{{asset('frontend/images/food2.png')}}" alt=""></p>
                 </div>
             </div>
             <div class="col-10 col-md-6 col-lg-3 order-4 order-md-3 order-lg-4">
