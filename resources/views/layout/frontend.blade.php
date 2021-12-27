@@ -325,14 +325,10 @@ $weekendEnd    = $settings->getWeekendClose($activeSettings);
 {{--                    <p>Email: <a href="mailto:jroo90@mail.ru" style="color: #0b0b0b">jroo90@mail.ru</a></p>--}}
                 </div>
                 <div class="footer-social text-center"><a class="round-icon-btn"
-                                                          href="https://www.facebook.com/jrooburgersteak/"
-                                                          target="_blank"><i
-                            class="fab fa-facebook-f"> </i></a><a class="round-icon-btn"
-                                                                  href="https://www.instagram.com/jroo_burger_steak/"
+                                                                  href="https://www.instagram.com/panorama.magas/"
                                                                   target="_blank"><i
-                            class="fab fa-instagram"></i></a><a class="round-icon-btn"
-                                                                href="https://vk.com/club136274972" target="_blank"><i
-                            class="fab fa-vk"> </i></a></div>
+                            class="fab fa-instagram"></i></a>
+                </div>
             </div>
 
             @if(false === env('APP_DEBUG'))
