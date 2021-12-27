@@ -313,7 +313,7 @@ $weekendEnd    = $settings->getWeekendClose($activeSettings);
                 <div class="footer-logo text-center"><img src="{{asset('frontend/images/logo3.png')}}" alt=""
                                                           style="width: 40%"></div>
                 <div class="footer-contact text-center">
-                    <p>Адрес: <a href="https://yandex.ru/maps/-/CGsruQ9e" style="color: #0b0b0b">г. Магас Проспект Зязикова, 2A На крыше бизнес-отеля Магас</a> </p>
+                    <p>Адрес: <a href="https://yandex.ru/maps/org/panorama/171760815629/?from=mapframe&ll=44.805559%2C43.174940&source=mapframe&utm_source=mapframe&z=18.73" style="color: #0b0b0b">г. Магас Проспект Зязикова, 2A На крыше бизнес-отеля Магас</a> </p>
                     <p>Телефон: <a href="tel:+79287328477" style="color: #0b0b0b"> +7 (928) 732-84-77</a></p>
 {{--                    <p>Email: <a href="mailto:jroo90@mail.ru" style="color: #0b0b0b">jroo90@mail.ru</a></p>--}}
                 </div>

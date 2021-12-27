@@ -19,13 +19,13 @@
 <!-- End breadcrumb-->
 <div class="contact-us">
   <div class="container">
-      <iframe src="https://yandex.ru/map-widget/v1/-/CGTvNI5K" width="100%" height="400" frameborder="1" allowfullscreen="true"></iframe>
+      <iframe src="https://yandex.ru/map-widget/v1/-/CCUy5Af7DB" width="100%" height="400" frameborder="1" allowfullscreen="true"></iframe>
     <div class="contact-method">
       <div class="row">
         <div class="col-12 col-md-4">
           <div class="method-block"><i class="icon_pin_alt"></i>
             <div class="method-block_text">
-              <p><a href="https://yandex.ru/maps/-/CGsruQ9e" style="color: #0b0b0b">г. Магас Проспект Зязикова, 2A. На крыше бизнес-отеля Магас</a> </p>
+              <p><a href="https://yandex.ru/maps/org/panorama/171760815629/?from=mapframe&ll=44.805559%2C43.174940&source=mapframe&utm_source=mapframe&z=18.73" style="color: #0b0b0b">г. Магас Проспект Зязикова, 2A. На крыше бизнес-отеля Магас</a> </p>
             </div>
           </div>
         </div>
