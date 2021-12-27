@@ -9,7 +9,7 @@
                     <div class="col-12">
                         <div class="featured-use text-md-right">
                             <div class="featured-use_intro order-2 order-md-1">
-                                <h5>JROO ?</h5>
+                                <h5>Панорама ?</h5>
                                 <p style="font-size: 13px!important; line-height: 20px !important; font-weight: bold;">
                                     Ресторан "Панорама" - это изысканное место, где каждый может окунуться в мир вкусной еды и приятных ощущений</p>
                             </div>
@@ -33,7 +33,7 @@
             </div>
             <div class="col-12 col-md-12 col-lg-6 order-2 order-md-4 order-lg-3 text-center">
                 <div class="week-product_img"><img class="img-fluid" src="{{asset('frontend/images/101412612.jpg')}}" alt="">
-                    <p><img src="{{asset('frontend/images/food3.png')}}" alt=""></p>
+{{--                    <p><img src="{{asset('frontend/images/food3.png')}}" alt=""></p>--}}
                 </div>
             </div>
             <div class="col-10 col-md-6 col-lg-3 order-4 order-md-3 order-lg-4">

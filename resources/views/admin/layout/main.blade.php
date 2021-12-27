@@ -51,7 +51,7 @@
 <footer class="sticky-footer">
     <div class="container">
         <div class="text-center">
-            <small>Copyright © JROO {{date("Y")}}</small>
+            <small>Copyright © Панорама {{date("Y")}}</small>
         </div>
     </div>
 </footer>
