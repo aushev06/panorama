@@ -25,15 +25,15 @@
         <div class="col-12 col-md-4">
           <div class="method-block"><i class="icon_pin_alt"></i>
             <div class="method-block_text">
-              <p><a href="https://yandex.ru/maps/-/CGsruQ9e" style="color: #0b0b0b">Крым, г. Ялта, ул. Игнатенко дом 3,</a> </p>
+              <p><a href="https://yandex.ru/maps/-/CGsruQ9e" style="color: #0b0b0b">г. Магас Проспект Зязикова, 2A. На крыше бизнес-отеля Магас</a> </p>
             </div>
           </div>
         </div>
         <div class="col-12 col-md-4">
           <div class="method-block"><i class="icon_mail_alt"></i>
             <div class="method-block_text">
-              <p> <span>Телефон:</span>‎<a href="tel:+79780873337" style="color: #0b0b0b"> +7 (978) 087-33-37</a></p>
-              <p><span>Mail:</span><a href="mailto:jroo90@mail.ru" style="color: #0b0b0b">jroo90@mail.ru</a></p>
+              <p> <span>Телефон:</span>‎<a href="tel:+79287328477" style="color: #0b0b0b"> +7 (928) 732-84-77</a></p>
+{{--              <p><span>Mail:</span><a href="mailto:jroo90@mail.ru" style="color: #0b0b0b">jroo90@mail.ru</a></p>--}}
             </div>
           </div>
         </div>

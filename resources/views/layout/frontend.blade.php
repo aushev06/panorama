@@ -135,11 +135,11 @@ $weekendEnd    = $settings->getWeekendClose($activeSettings);
                                         class="menu-item {{request()->is('delivery') ? 'active' : ''}}"
                                         href="{{route('delivery')}}">Доставка</a>
                                 </li>
-                                <li class="toggleable">
-                                    <a
-                                        class="menu-item {{request()->is('bonus') ? 'active' : ''}}"
-                                        href="{{route('bonus')}}">Бонусы</a>
-                                </li>
+{{--                                <li class="toggleable">--}}
+{{--                                    <a--}}
+{{--                                        class="menu-item {{request()->is('bonus') ? 'active' : ''}}"--}}
+{{--                                        href="{{route('bonus')}}">Бонусы</a>--}}
+{{--                                </li>--}}
                                 <li class="toggleable">
                                     <a class="menu-item {{request()->is('contact') ? 'active' : ''}}"
                                        href="{{route('contact')}}">Контакты</a>
@@ -190,11 +190,11 @@ $weekendEnd    = $settings->getWeekendClose($activeSettings);
                                                     style="width: 30px; margin-right: 5px;">Доставка</a>
 
                                         </li>
-                                        <li class="toggleable"><a class="menu-item" href="{{route('bonus')}}"><img
-                                                    src="{{asset('frontend/images/icon/loyalty-card.png')}}"
-                                                    style="width: 30px; margin-right: 5px;">Бонусы</a>
+{{--                                        <li class="toggleable"><a class="menu-item" href="{{route('bonus')}}"><img--}}
+{{--                                                    src="{{asset('frontend/images/icon/loyalty-card.png')}}"--}}
+{{--                                                    style="width: 30px; margin-right: 5px;">Бонусы</a>--}}
 
-                                        </li>
+{{--                                        </li>--}}
                                         <li class="toggleable"><a class="menu-item" href="{{route('contact')}}"><img
                                                     src="{{asset('frontend/images/icon/contact-card.png')}}"
                                                     style="width: 30px; margin-right: 5px;">Контакты</a>
@@ -320,9 +320,9 @@ $weekendEnd    = $settings->getWeekendClose($activeSettings);
                 <div class="footer-logo text-center"><img src="{{asset('frontend/images/logo3.png')}}" alt=""
                                                           style="width: 40%"></div>
                 <div class="footer-contact text-center">
-                    <p>Адрес: <a href="https://yandex.ru/maps/-/CGsruQ9e" style="color: #0b0b0b">Крым, г. Ялта, ул. Игнатенко дом 3,</a> </p>
-                    <p>Телефон: <a href="tel:+79780873337" style="color: #0b0b0b"> +7 (978) 087-33-37</a></p>
-                    <p>Email: <a href="mailto:jroo90@mail.ru" style="color: #0b0b0b">jroo90@mail.ru</a></p>
+                    <p>Адрес: <a href="https://yandex.ru/maps/-/CGsruQ9e" style="color: #0b0b0b">г. Магас Проспект Зязикова, 2A На крыше бизнес-отеля Магас</a> </p>
+                    <p>Телефон: <a href="tel:+79287328477" style="color: #0b0b0b"> +7 (928) 732-84-77</a></p>
+{{--                    <p>Email: <a href="mailto:jroo90@mail.ru" style="color: #0b0b0b">jroo90@mail.ru</a></p>--}}
                 </div>
                 <div class="footer-social text-center"><a class="round-icon-btn"
                                                           href="https://www.facebook.com/jrooburgersteak/"
