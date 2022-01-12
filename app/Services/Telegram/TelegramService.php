@@ -11,7 +11,7 @@ class TelegramService
 {
     public function sendToTelegram(Order $order)
     {
-        $message = 'Новый заказ на сайте.' . $order->status  ? 'Заказ оплачен' : 'Заказ не оплачен' . 'Ссылка на заказ - http://dostavka-panorama.ru/order-telegram/' . $order->id;
+        $message = 'Новый заказ на сайте. ' . $order->status  ? 'Заказ оплачен' : 'Заказ не оплачен' . ' Ссылка на заказ - http://dostavka-panorama.ru/order-telegram/' . $order->id;
         $botId = 'bot972483178:AAEZccqLHo5Ce2f9bOSCNUkhFB17t_uI5hs';
         $chatId = '-500352969';
         $client = new Client(
