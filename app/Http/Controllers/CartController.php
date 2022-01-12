@@ -82,14 +82,14 @@ class CartController extends Controller
             );
             return redirect()->route('home');
         }
-
-        if (date('H:m') > $orderEnd || date('H:m') < $orderStart) {
-            $request->session()->flash(
-                'message',
-                ['class' => 'alert-danger', 'message' => 'В данное время суток заказы не принимаются!']
-            );
-            return redirect()->route('home');
-        }
+//
+//        if (date('H:m') > $orderEnd || date('H:m') < $orderStart) {
+//            $request->session()->flash(
+//                'message',
+//                ['class' => 'alert-danger', 'message' => 'В данное время суток заказы не принимаются!']
+//            );
+//            return redirect()->route('home');
+//        }
 
 
         $cart = $this->cartRepository->getCart();

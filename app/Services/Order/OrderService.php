@@ -104,6 +104,7 @@ TEXT;
         $payment->setSum($order->total);
         $payment->setDescription("Оплата заказа");
 
+
         return $payment->getPaymentUrl();
     }
 

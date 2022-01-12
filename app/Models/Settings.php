@@ -75,14 +75,14 @@ class Settings extends Model
     public function getActiveSettings()
     {
         if (empty($this->activeSettings)) {
-            $this->activeSettings = static::query()->active()->get()->keyBy('key')->all();
+            $this->activeSettings = static::query()->get()->keyBy('key')->all();
         }
         return $this->activeSettings;
     }
 
     public static function getActiveSettingsAll()
     {
-        return self::query()->active()->get()->keyBy(Settings::ATTR_KEY)->all();
+        return self::query()->get()->keyBy(Settings::ATTR_KEY)->all();
     }
 
     public static function getIsOrdersOff($activeSettings = null)

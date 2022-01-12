@@ -53,7 +53,6 @@ use App\Http\Controllers\Admin\SettingsController as Controller;
                                     {{$model->description}}
                                 </td>
                                 <td>
-                                    {{$model::getStatusVariants()[$model->status]}}
                                 </td>
                                 <td>
                                     <a href="{{route(Controller::ROUTE_EDIT, $model->key)}}"><i
