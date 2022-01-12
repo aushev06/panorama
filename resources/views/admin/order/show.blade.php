@@ -47,7 +47,7 @@ use App\Http\Controllers\Admin\OrderController as Controller;
                             @foreach($model->attributes() as $attribute => $value)
                                 <tr>
                                     <th>{{$value}}</th>
-                                    <td>{{$value === 'Статус' ? $model->$attribute ? 'Оплачен' : 'Не оплачен'  :  $model->$attribute}}</td>
+                                    <td>{{$model->$attribute}}</td>
                                 </tr>
                             @endforeach
                         </table>
