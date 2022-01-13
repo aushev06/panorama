@@ -39,21 +39,21 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton('Payment', function () {
 
             $robokassaLogin  = env('DEMO_MRH_LOGIN', 'Panorama06');
-            $robokassaIsTest = env('TEST_ROBOKASSA', true);
+            $robokassaIsTest = env('TEST_ROBOKASSA', false);
 
             if ($robokassaIsTest) {
-                $robokassaPass = env('TEST_MRH_PASSWORD', 'ehqGN7wXgScP060WNnF6');
-                $robokassaPass2 = env('TEST_MRH_PASSWORD2', 'LszR30M4FSh3giQe5KlU');
+                $robokassaPass = env('TEST_MRH_PASSWORD', 't4Z7ZHtmPwcNM76l6ZnK');
+                $robokassaPass2 = env('TEST_MRH_PASSWORD2', 'bX32l26STXuDB7qmSMrK');
             } else {
-                $robokassaPass = env('TEST_MRH_PASSWORD', 'ehqGN7wXgScP060WNnF6');
-                $robokassaPass2 = env('TEST_MRH_PASSWORD2', 'LszR30M4FSh3giQe5KlU');
+                $robokassaPass = env('TEST_MRH_PASSWORD', 't4Z7ZHtmPwcNM76l6ZnK');
+                $robokassaPass2 = env('TEST_MRH_PASSWORD2', 'bX32l26STXuDB7qmSMrK');
             }
 
             return new Payment(
                 $robokassaLogin,
                 $robokassaPass,
                 $robokassaPass2,
-                true
+                $robokassaIsTest
             );
         });
     }
