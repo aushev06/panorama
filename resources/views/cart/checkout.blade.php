@@ -82,23 +82,7 @@ use App\Models\Order\Order;
                                 <input class="no-round-input-bg" name="phone" id="phone" type="text" required="">
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-4">
-                                <label for="inputFirstName">Размер S</label>
-                                <input class="no-round-input-bg" name="gloves_s" id="gloves_s" type="text"
-                                       placeholder="Кол-во перчаток">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label for="inputLastName">Размер M</label>
-                                <input class="no-round-input-bg" name="gloves_m" id="gloves_m" type="text"
-                                       placeholder="Кол-во перчаток">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label for="inputLastName">Размер L</label>
-                                <input class="no-round-input-bg" name="gloves_l" id="gloves_l" type="text"
-                                       placeholder="Кол-во перчаток">
-                            </div>
-                        </div>
+                
                         <!--
                        <div class="gloves">
                            <div class="form-row align-items-center">
