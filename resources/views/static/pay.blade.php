@@ -59,6 +59,15 @@
                                 После оформления заказа с вами обязательно свяжется оператор для подтверждения в течение 10 минут.Время доставки может меняться в зависимости от вашего местонахождения, ситуации на дорогах, загрузки ресторана.</p>
                         </div>
                     </div>
+
+
+                    <div class="col-12 col-md-6">
+                        <div class="our-story_text">
+                            <h1 class="title green-underline">Реквизиты</h1>
+                            <p>Наши реквизиты доступны по ссылке <a href="https://docs.google.com/document/d/1a1XG5WFiCmV7hDcvLsB7RRoLfflBaiyeM4DA8SzKgd8/edit?usp=sharing">https://docs.google.com/document/d/1a1XG5WFiCmV7hDcvLsB7RRoLfflBaiyeM4DA8SzKgd8/edit?usp=sharing</a></p>
+                        </div>
+                    </div>
+
                     <div class="col-12 col-md-6">
                         <img src="{{asset('frontend/images/pay-pay.png')}}" alt="" style="width: 100%;">
                     </div>
