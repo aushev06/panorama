@@ -125,7 +125,7 @@ use App\Models\Order\Order;
                         <div class="form-row">
                             <div class="form-group col-md-4 hide-pickup">
                                 <label for="inputCompanyName">Город*</label>
-                                <input required class="no-round-input-bg" name="city" type="text">
+                                <input class="no-round-input-bg" name="city" type="text">
                             </div>
                             <div class="form-group col-md-4 hide-pickup">
                                 <label for="inputCompanyName">Улица*</label>
