@@ -82,7 +82,7 @@ use App\Models\Order\Order;
                                 <input class="no-round-input-bg" name="phone" id="phone" type="text" required="">
                             </div>
                         </div>
-                
+
                         <!--
                        <div class="gloves">
                            <div class="form-row align-items-center">
@@ -125,15 +125,15 @@ use App\Models\Order\Order;
                         <div class="form-row">
                             <div class="form-group col-md-4 hide-pickup">
                                 <label for="inputCompanyName">Город*</label>
-                                <input class="no-round-input-bg" name="city" type="text">
+                                <input required class="no-round-input-bg" name="city" type="text">
                             </div>
                             <div class="form-group col-md-4 hide-pickup">
                                 <label for="inputCompanyName">Улица*</label>
-                                <input class="no-round-input-bg" name="street" type="text">
+                                <input required class="no-round-input-bg" name="street" type="text">
                             </div>
                             <div class="form-group col-md-4 hide-pickup">
                                 <label for="inputCompanyName">Дом*</label>
-                                <input class="no-round-input-bg" name="house" type="text">
+                                <input required class="no-round-input-bg" name="house" type="text">
                             </div>
                         </div>
                         <div class="form-row">
