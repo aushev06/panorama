@@ -38,6 +38,11 @@ class OrderViewModel
     public $address;
 
     /**
+     * @var string
+     */
+    public $city;
+
+    /**
      * @var integer
      */
     public $home;
@@ -118,25 +123,26 @@ class OrderViewModel
      */
     public $foodProperties;
 
-    const ATTR_PHONE         = 'phone';
-    const ATTR_ADDRESS       = 'address';
-    const ATTR_HOME          = 'home';
-    const ATTR_FLOOR         = 'floor';
-    const ATTR_PORCH         = 'porch';
+    const ATTR_PHONE = 'phone';
+    const ATTR_ADDRESS = 'address';
+    const ATTR_HOME = 'home';
+    const ATTR_FLOOR = 'floor';
+    const ATTR_PORCH = 'porch';
     const ATTR_TIME_DELIVERY = 'time_delivery';
     const ATTR_DATE_DELIVERY = 'date_delivery';
-    const ATTR_ORGANIZATION  = 'organization';
-    const ATTR_PAY_TYPE      = 'pay_type';
-    const ATTR_USER_ID       = 'user_id';
-    const ATTR_TOTAL         = 'total';
-    const ATTR_COMMENT       = 'comment';
-    const ATTR_STATUS        = 'status';
-    const ATTR_STREET        = 'street';
-    const ATTR_HOUSE         = 'house';
-    const ATTR_APARTMENT     = 'apartment';
-    const ATTR_ENTRANCE      = 'entrance';
-    const ATTR_INTERCOM      = 'intercom';
-    const ATTR_BUILDING      = 'building';
+    const ATTR_ORGANIZATION = 'organization';
+    const ATTR_PAY_TYPE = 'pay_type';
+    const ATTR_USER_ID = 'user_id';
+    const ATTR_TOTAL = 'total';
+    const ATTR_COMMENT = 'comment';
+    const ATTR_STATUS = 'status';
+    const ATTR_STREET = 'street';
+    const ATTR_HOUSE = 'house';
+    const ATTR_APARTMENT = 'apartment';
+    const ATTR_ENTRANCE = 'entrance';
+    const ATTR_INTERCOM = 'intercom';
+    const ATTR_BUILDING = 'building';
+    const ATTR_CITY = 'city';
 
 
     public function __construct(Order $order, OrderRepository $orderRepository)
@@ -158,27 +164,26 @@ class OrderViewModel
                 $this->foodProperties[] = new CartPropertyViewModel($cartProperty);
             }
         }
-
-
     }
 
     public function attributes()
     {
         return [
-            self::ATTR_PHONE         => 'Телефон',
+            self::ATTR_PHONE => 'Телефон',
             self::ATTR_TIME_DELIVERY => 'Время доставки',
             self::ATTR_DATE_DELIVERY => 'Дата доставки',
-            self::ATTR_ORGANIZATION  => 'Организация',
-            self::ATTR_PAY_TYPE      => 'Тип оплаты',
-            self::ATTR_NAME          => 'Имя',
-            self::ATTR_TOTAL         => 'Сумма заказа',
-            self::ATTR_COMMENT       => 'Коммент',
-            self::ATTR_STATUS        => 'Статус',
-            self::ATTR_STREET        => 'Адрес',
-            self::ATTR_BUILDING      => 'Корпус',
-            self::ATTR_ENTRANCE      => 'Подъезд',
-            self::ATTR_APARTMENT     => 'Квартира',
-            self::ATTR_HOUSE         => 'Дом',
+            self::ATTR_ORGANIZATION => 'Организация',
+            self::ATTR_PAY_TYPE => 'Тип оплаты',
+            self::ATTR_NAME => 'Имя',
+            self::ATTR_TOTAL => 'Сумма заказа',
+            self::ATTR_COMMENT => 'Коммент',
+            self::ATTR_STATUS => 'Статус',
+            self::ATTR_STREET => 'Адрес',
+            self::ATTR_BUILDING => 'Корпус',
+            self::ATTR_ENTRANCE => 'Подъезд',
+            self::ATTR_APARTMENT => 'Квартира',
+            self::ATTR_HOUSE => 'Дом',
+            self::ATTR_CITY => 'Город',
         ];
     }
 }
